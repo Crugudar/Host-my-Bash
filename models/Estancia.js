@@ -1,14 +1,26 @@
-// Estancia {
-//     -imagen:{type:String}
-//     -Nombre estancia{type:string, required:true}
-//     -Owner:{user(hotel)_id},
-//     -streetName: String,
-//     -streetNumber: Number,
-//     -city: String,
-//     -zipcode:{Number}
-//     -phone: Number,
-//     -webpage: String,
-//     -paquete [{String}, {String}],
-//     -fechas disponibilidad:[{type:Date}] (modificar con update en la reserva)
-//     }
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+
+const estanciaSchema = new Schema({
+    image:{type:String},
+    estanciaName:{type:String},
+    owner: { type: Schema.Types.ObjectId, ref: 'User' },
+    streetName:{type:String},
+    streetNumber:{type:Number},
+    city:{type:String},
+    zipcode:{type:Number},
+    pack: [{type:String}],
+    phone: {type:Number},
+    invited:[{type:String}],
+    bookedDates:[{type:Date}]
+  });
+  
+  estanciaSchema.set('timestamps', true);
+  
+  const Estancia = mongoose.model('Estancia', estanciaSchema);
+  
+  module.exports = Estancia;
+
+
     
