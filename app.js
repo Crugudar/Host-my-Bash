@@ -10,11 +10,29 @@ var hotelsRouter = require('./routes/hotels');
 var authRouter = require('./routes/auth');
 var publicRouter = require('./routes/public');
 
+const favicon = require('serve-favicon');
+const mongoose = require('mongoose');
+
+var javaScripts = require('./public/javascripts');
+
+mongoose.connect('mongodb://localhost/Host-my-bash', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .then(x => {
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+  })
+  .catch(err => {
+    console.error('Error connecting to mongo', err);
+  });
+
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
