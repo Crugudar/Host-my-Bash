@@ -4,11 +4,12 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
    
     username: { type:String, required:true, unique:true},
+    lastname:{ type:String},
     email:{type: String, required:true, unique:true},
     password:{type:String, required:true},
-    isHotel:false,
-    reservations:[{type:Sring}],
-    estancias:[{type:String}],
+    isHotel:{type: Boolean, default:false},
+    reservations:[{type:String, default:null}],
+    plans:[{type:String, default: null}],
   });
   
   userSchema.set('timestamps', true);

@@ -2,3 +2,10 @@
 <p>Welcome to {{title}}</p>
 
 
+<!-- validamos que el usuario esté logueado para mostrar diferentes opciones en la navbar-->
+    {{#if isUserLoggedIn}}
+      <li> <a href="/logout"> Log Out </a> </li>
+    {{else}}
+      <li> <a href="/signup"> Sign Up </a> </li>
+      <li> <a href="/login"> Log In </a> </li>
+    {{/if}}
