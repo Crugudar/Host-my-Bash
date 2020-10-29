@@ -1,16 +1,19 @@
-// User{
-//     _id:
-//     username: {type:string, required:true unique:true},
-//     email:{type String, required:true, unique:true}, 
-//     Acordarse de añadir la validación en el frontend de formato email
-//     password{type:String, required:true},
-//         Acordarse de añadir la validación en el frontend de formato password
-    
-//     type of user [Hotel /user/(admin cambiado manualmente+middleware para validación de admin)]
-// reservas[{type:Sring}],
-// Estancias[{type:String}],
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
+const userSchema = new Schema({
+   
+    username: { type:String, required:true, unique:true},
+    email:{type String, required:true, unique:true},
+    password:{type:String, required:true},
+    isHotel:false;
+    reservations:[{type:Sring}],
+    estancias:[{type:String}],
+  });
+  
+  userSchema.set('timestamps', true);
+  
+  const User = mongoose.model('User', userSchema);
+  
+  module.exports = User;
 
-// }
-
-    
