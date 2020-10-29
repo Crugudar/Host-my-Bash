@@ -17,5 +17,20 @@
     "mongoose": "^5.10.11",
     "morgan": "~1.9.1",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "description": "## Description",
+  "main": "app.js",
+  "bin": {
+    "host-my-bash": "seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crugudar/Host-my-Bash.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crugudar/Host-my-Bash/issues"
+  },
+  "homepage": "https://github.com/Crugudar/Host-my-Bash#readme"
 }
