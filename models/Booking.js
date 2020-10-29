@@ -4,10 +4,8 @@ const Schema = mongoose.Schema;
 const bookingSchema = new Schema({
    
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    owner: { type: Schema.Types.ObjectId, ref: 'User' },
-    estancia:{type:Schema.Types.ObjectId, ref:'Estancia'},
+    plan:{type:Schema.Types.ObjectId, ref:'Plan'},
     date: {type: Date},
-    pack: {type:String},
     invited:[{type:String}]
   });
   
