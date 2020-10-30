@@ -4,6 +4,7 @@ const { bar } = require("../public/javascripts");
 var router = express.Router();
 const Plan = require("../models/Plan");
 const Booking = require("../models/Booking");
+const User = require("../models/User");
 
 router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
   console.log("INVITADOOOOOOOOOS", req.body);
@@ -34,8 +35,16 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
     //  necesitamos tener idUsuario, atendees(check), fecha (problema), idPlan(problema)
     const newBooking = await Booking.create(reserva);
     //console.log(newBooking);
-    await Plan.findByIdAndUpdate(planId,{reserved});
-    
+    await Plan.findByIdAndUpdate(
+      planId,
+      { $push: { reserved: day } },
+      { new: true }
+    );
+    await User.findByIdAndUpdate(
+      req.userID,
+      { $push: { reservations: newBooking._id } },
+      { new: true }
+    );
     res.status(200).render("users/profile", { reserva });
   } catch (err) {
     console.log(err);
