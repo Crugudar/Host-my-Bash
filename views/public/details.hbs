@@ -7,9 +7,21 @@
         <h3>{{planDetail.planName}}</h3>
         <h4>Description:{{planDetail.description}} </h4>
         <h5>Hotel name:</h5>
-        <img src="" alt="">
-        
-        
-        
+        <img src="" alt="">   
     </div>
+
+    <form action="/booking" method='get'>
+        <label for="atendees">How many people are comming. Bear in mind that due to COVID times the maximum capacity is 6 people <b>INCLUDING YOURSELF</b>:</label>
+        <select name="people" id="people">
+        <option id='guestCount1'value="1" >1</option>
+        <option id='guestCount2'value="2">2</option>
+        <option id='guestCount3'value="3">3</option>
+        <option id='guestCount4'value="4">4</option>
+        <option id='guestCount5'value="5">5</option>
+        <option id='guestCount6'value="6">6</option>
+</select>
+
+    <button type='submit'>Book it!</button>   
+    </form>
+   
 </div>

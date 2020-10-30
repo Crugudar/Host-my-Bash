@@ -11,16 +11,31 @@ router.get('/filter', (req, res, next)=>{
 router.get('/list/', async(req, res, next)=>{
  const {day}=req.query;
  console.log(day);
+ 
 
  const availablePlans= await Plan.find({reserved:{$ne: req.day}});
- console.log(availablePlans);
+  
+  var reserva = {
+    availablePlans,
+    date: day,
+  }
+  // availablePlans.unshift(day);
+  //   const reserva={
+  //   date:day,
+  //   availablePlans:availablePlans
+  // };
 
- res.render('public/hotels', {availablePlans});
+  console.log('jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj', reserva);
+  res.render('public/hotels', {reserva});
   
 });
 
-router.get('/details/:_id', async(req, res, next)=>{
+
+
+router.get('/details/:_id/:date', async(req, res, next)=>{
   const planDetail= await Plan.findById(req.params._id);
+
+  // console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' , selectedDate);
 
   res.render('public/details', {planDetail});
 })

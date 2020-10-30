@@ -1,11 +1,13 @@
 <h2>Hotels List</h2>
-<h3>Click on the hotel to check the more information!</h3>
+<h3>Click on the hotel to check the more information!{{selectedDate}}</h3>
 <div >
-   {{#each availablePlans}}
+
+  
+   {{#each reserva.availablePlans}}
    <div >
       <img src="{{this.image}}" alt="portada" class="image">
       <h4>{{this.planName}}</h4>
-      <a href="/details/{{this.id}}">See more</a>
+      <a href="/details/{{this.id}}/{{../reserva.date}}">See more</a>
    </div>
    {{/each}}
 </div>

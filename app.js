@@ -1,9 +1,19 @@
 require('dotenv').config();
+
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+
+const hbs=require('hbs');
+
+hbs.registerHelper('times', function(n, block) {
+  var accum = '';
+  for(var i = 0; i < n; ++i)
+      accum += block.fn(i);
+  return accum;
+});
 
 const favicon = require("serve-favicon");
 const mongoose = require("mongoose");
@@ -28,9 +38,6 @@ var authRouter = require("./routes/auth");
 var usersRouter = require("./routes/users");
 var hotelsRouter = require("./routes/hotels");
 
-
-const favicon = require('serve-favicon');
-const mongoose = require('mongoose');
 
 var javaScripts = require('./public/javascripts');
 
@@ -59,9 +66,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/", authRouter);
 app.use("/", indexRouter);
 app.use("/", publicRouter);
-app.use("/", authRouter);
 app.use("/", usersRouter);
 app.use("/", hotelsRouter);
 

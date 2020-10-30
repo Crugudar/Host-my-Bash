@@ -99,7 +99,7 @@ router.post("/login", async (req, res) => {
       const userWithoutPass = await User.findOne({ email }).select("-password");
       const payload = { userID: userWithoutPass._id };
       const token = jwt.sign(payload, process.env.SECRET_SESSION, {
-        expiresIn: "1h",
+        expiresIn: "3h",
       });
 
       // enviamos en la respuesta una cookie con el token (recordar agregar el {httpOnly: true} en la respuesta) y luego redirigimos a la home

@@ -1,93 +1,30 @@
 <h3>BOOKING DETAILS</h3>
 
-<form action="/booking" method="post">
-    <div>
-        <label for="user-name-input"> User Name </label>
-        <input type="text" name="username" id="name-input" placeholder="UserName">
-    </div>
 
-    <div>
-        <label for="user -lastname-input"> User Last name </label>
-        <input type="text" name="userlastname" id="userlastname-input" placeholder="UserLastname">
-    </div>
 
-    <div>
-        <label for="user-phone-input"> User Phone number </label>
-        <input type="phone" name="phone" id="user-phone-input" placeholder="User Phone number">
-    </div>
+{{#if isUserLoggedIn }}
 
-    <div>
+<form id='formGuest' action="/booking" method="post">
+
+    {{#times num}}
+     <div class="guestForm hidden">
         <label for="name-input"> Attendee 1 Name </label>
-        <input type="text" name="attendee1name" id="name-input" placeholder="Attendee 1 Name">
-    </div>
-
-    <div>
+        <input type="text" name="attendeename" id="name-input" placeholder="Attendee 1 Name">
         <label for="user -lastname-input"> Attendee 1 LastName </label>
         <input type="text" name="attendee1lastname" id="lastname-input" placeholder="Attendee 1 LastName">
-    </div>
-
-    <div>
         <label for="user-phone-input"> Attendee 1 Phone number </label>
         <input type="phone" name="attendee1phone" id="phone-input" placeholder="Attendee 1 Phone number">
+
     </div>
+    {{/times}}
     
-    <div>
-        <label for="name-input"> Attendee 2 Name </label>
-        <input type="text" name="attendee2name" id="name-input" placeholder="Attendee 2 Name">
-    </div>
 
-    <div>
-        <label for="user -lastname-input"> Attendee 2 LastName </label>
-        <input type="text" name="attendee2lastname" id="lastname-input" placeholder="Attendee 2 LastName">
-    </div>
-
-    <div>
-        <label for="user-phone-input"> Attendee 2 Phone number </label>
-        <input type="phone" name="attendee2phone" id="phone-input" placeholder="Attendee 2 Phone number">
-    </div>
-
-    <div>
-        <label for="name-input"> Attendee 3 Name </label>
-        <input type="text" name="attendee3name" id="name-input" placeholder="Attendee 3 Name">
-    </div>
-
-    <div>
-        <label for="user -lastname-input"> Attendee 3 LastName </label>
-        <input type="text" name="attendee3lastname" id="lastname-input" placeholder="Attendee 3 LastName">
-    </div>
-
-    <div>
-        <label for="user-phone-input"> Attendee 3 Phone number </label>
-        <input type="phone" name="attendee3phone" id="phone-input" placeholder="Attendee 3 Phone number">
-    </div>
-
-    <div>
-        <label for="name-input"> Attendee 4 Name </label>
-        <input type="text" name="attendee4name" id="name-input" placeholder="Attendee 4 Name">
-    </div>
-
-    <div>
-        <label for="user -lastname-input"> Attendee 4 LastName </label>
-        <input type="text" name="attendee4lastname" id="lastname-input" placeholder="Attendee 4 LastName">
-    </div>
-
-    <div>
-        <label for="user-phone-input"> Attendee 4 Phone number </label>
-        <input type="phone" name="attendee4phone" id="phone-input" placeholder="Attendee 4 Phone number">
-    </div>
-    <div>
-        <label for="name-input"> Attendee 5 Name </label>
-        <input type="text" name="attendee5name" id="name-input" placeholder="Attendee 5 Name">
-    </div>
-
-    <div>
-        <label for="user -lastname-input"> Attendee 5 LastName </label>
-        <input type="text" name="attendee5lastname" id="lastname-input" placeholder="Attendee 5 LastName">
-    </div>
-
-    <div>
-        <label for="user-phone-input"> Attendee 5 Phone number </label>
-        <input type="phone" name="attendee5phone" id="phone-input" placeholder="Attendee 5 Phone number">
-    </div>
-    <button> BOOK! </button>
+ <button type='submit'> BOOK! </button>
 </form>
+{{else}}
+<h2>You must be logged in to Book a plan</h2>
+<h4> If you don't have an account create one:</h4>
+<li> <a href="/signup"> Sign Up </a> </li><br>
+<h4> If you already have an account:</h4>
+<li> <a href="/login"> Log In </a> </li>
+{{/if}}
