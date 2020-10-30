@@ -1,14 +1,24 @@
 <h3>BOOKING DETAILS</h3>
 
+<div>
+        <img  src="{{reserva.planDetail.image}}" alt="reserva">
+    </div>
+    <div >
+        <a href="/">Go back</a>
+        <h3>{{reserva.planDetail.planName}}</h3>
+        <h4>Description:{{reserva.planDetail.description}} </h4>
+        <h5>Date: {{reserva.date}}</h5> 
+    </div>
 
 
 {{#if isUserLoggedIn }}
 
-<form id='formGuest' action="/booking" method="post">
 
-    {{#times num}}
+<form id='formGuest' action="/booking/{{reserva._id}}/{{reserva.date}}/{{reserva.people}}" method="post">
+
+    {{#times reserva.people}}
      <div class="guestForm hidden">
-        <label for="name-input"> Attendee 1 Name </label>
+        <label for="name-input"> Attendee Name </label>
         <input type="text" name="attendeename" id="name-input" placeholder="Attendee 1 Name">
         <label for="user -lastname-input"> Attendee 1 LastName </label>
         <input type="text" name="attendee1lastname" id="lastname-input" placeholder="Attendee 1 LastName">

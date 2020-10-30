@@ -34,10 +34,17 @@ router.get('/list/', async(req, res, next)=>{
 
 router.get('/details/:_id/:date', async(req, res, next)=>{
   const planDetail= await Plan.findById(req.params._id);
+  const day = req.params.date;
+  const planId = req.params._id;
+  const reserva = {
+    date:day,
+    _id:planId,
+    planDetail
+  }
 
   // console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!' , selectedDate);
 
-  res.render('public/details', {planDetail});
+  res.render('public/details', {reserva});
 })
 
 module.exports = router;

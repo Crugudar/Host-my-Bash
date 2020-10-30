@@ -5,8 +5,8 @@ const bookingSchema = new Schema({
    
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     plan:{type:Schema.Types.ObjectId, ref:'Plan'},
-    date: {type: Date},
-    invited:[{type:String}]
+    date: {type: String},
+    invited:[{type:Object}]
   });
   
   bookingSchema.set('timestamps', true);

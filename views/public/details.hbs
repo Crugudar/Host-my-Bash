@@ -1,16 +1,15 @@
 <div>
     <div>
-        <img  src="" alt="portada">
+        <img  src="{{reserva.planDetail.image}}" alt="reserva">
     </div>
     <div >
         <a href="/">Go back</a>
-        <h3>{{planDetail.planName}}</h3>
-        <h4>Description:{{planDetail.description}} </h4>
-        <h5>Hotel name:</h5>
-        <img src="" alt="">   
+        <h3>{{reserva.planDetail.planName}}</h3>
+        <h4>Description:{{reserva.planDetail.description}} </h4>
+        <h5>Date: {{reserva.date}}</h5> 
     </div>
 
-    <form action="/booking" method='get'>
+    <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
         <label for="atendees">How many people are comming. Bear in mind that due to COVID times the maximum capacity is 6 people <b>INCLUDING YOURSELF</b>:</label>
         <select name="people" id="people">
         <option id='guestCount1'value="1" >1</option>
@@ -21,7 +20,7 @@
         <option id='guestCount6'value="6">6</option>
 </select>
 
-    <button type='submit'>Book it!</button>   
+    <button type="submit">Book it!</button>   
     </form>
    
 </div>
