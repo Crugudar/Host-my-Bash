@@ -6,6 +6,7 @@ const Plan = require("../models/Plan");
 const Booking = require("../models/Booking");
 const User = require("../models/User");
 
+
 //Ruta post donde recoge todos los detalles de la reserva para renderizarlos en el perfil del usuario
 router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
   //console.log(req.body);

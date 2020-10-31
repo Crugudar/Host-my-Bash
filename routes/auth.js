@@ -77,7 +77,7 @@ router.get("/login", (req, res, next) => {
 // Ruta POST de 'login'
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
-  console.log;
+  //console.log;
   // Chequear si hay algún campo vacío en el formulario
   if (email === "" || password === "") {
     res.render("auth/login", {
@@ -89,7 +89,7 @@ router.post("/login", async (req, res) => {
   try {
     // revisamos si el usuario existe en la BD
     const user = await User.findOne({ email });
-    console.log(user);
+    //console.log(user);
     if (!user) {
       res.render("auth/login", {
         errorMessage: "The email doesn't exist.",
