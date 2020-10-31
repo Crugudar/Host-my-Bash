@@ -38,6 +38,7 @@ var authRouter = require("./routes/auth");
 var usersRouter = require("./routes/users");
 var usersCopyRouter = require("./routes/userscopy");
 var usersEditRouter = require("./routes/users_edit");
+var usersDeleteRouter = require("./routes/delete");
 var hotelsRouter = require("./routes/hotels");
 
 
@@ -74,6 +75,7 @@ app.use("/", publicRouter);
 app.use("/", usersRouter);
 app.use("/", usersCopyRouter);
 app.use("/", usersEditRouter);
+app.use("/", usersDeleteRouter);
 app.use("/", hotelsRouter);
 
 // catch 404 and forward to error handler

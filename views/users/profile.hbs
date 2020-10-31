@@ -6,5 +6,6 @@
 <h4>{{this.plan.planName}}</h4>
 {{#each this.invited}}<h4>{{this.name}}, {{this.lastname}}</h4>{{/each}}
 <a href="/editbookings/{{this._id}}">Edit</a>
+<a href='/delete/{{this._id}}'>Delete</a>
 {{/each}}
-
+<a href='/filter'>Search more plans</a>

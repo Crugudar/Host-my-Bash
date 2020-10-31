@@ -8,7 +8,8 @@ const Booking = require ("../models/Booking");
 
 //Ruta GET profile
 router.get("/profile", withAuth, async (req, res, next) => {
-  const thisUser = await User.findOne({ _id: req.userID }).populate({
+  try {
+    const thisUser = await User.findOne({ _id: req.userID }).populate({
     path: "reservations",
     model: "Booking",
     populate: { path: "plan", model: "Plan" },
@@ -16,6 +17,10 @@ router.get("/profile", withAuth, async (req, res, next) => {
 
   //console.log(thisUser.reservations[0]);
   res.render("users/profile", { thisUser });
+  } catch (error) {
+    console.log(error)
+  }
+  
 });
 
 //Ruta GET para ir al formulario de reserva incluyendo los detalles de las personas, del plan, y del día
