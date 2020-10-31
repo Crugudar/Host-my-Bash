@@ -1,13 +1,31 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="index">
+
+  <div class="welcome">
+    <h1>Welcome! </h1>
+    <div class="same_divs">
+      <div>
+        <p> Host my Bash! is the best platform to spend time with your friends. There are several plans to enjoy! It is
+          really
+          easy to use, you need to filter by the day that you really want to enhoy the plan, book the service and
+          register
+          your friends. It is necessary to fill all this information because we could be in contact with you in case
+          that
+          we detect that there is any COVID case.</p>
+      </div>
+      <div>
+        <p>info@hostmybash.com</p>
+        <p>935 643 214</p>
+      </div>
+      <div>
+        <a class="button" href='/filter'>Enter</a>
+      </div>
+    </div>
+  </div>
+  <div class="same_divs">
+    <img src="../images/hostmybash.png" alt="logo" class="logo_index">
+  </div>
+</div>
+
 
 
 <!-- validamos que el usuario esté logueado para mostrar diferentes opciones en la navbar-->
-    {{#if isUserLoggedIn}}
-      <li> <a href="/logout"> Log Out </a> </li>
-      <li> <a href="/profile"> Profil </a> </li>
-    {{else}}
-      <li> <a href="/signup"> Sign Up </a> </li>
-      <li> <a href="/login"> Log In </a> </li>
-    {{/if}}
-<button><a href='/filter'>Enter</a></button>

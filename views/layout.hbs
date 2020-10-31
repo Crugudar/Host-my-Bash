@@ -1,12 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <title>Host my Bash!</title>
 </head>
+
 <body>
-    
-     {{{body}}}
+    <header class="body">
+        <i class="fa fa-bars bars-button" aria-hidden="true" id="bars-button"></i>
+        <div class="navbar">
+            <div class="contenido">
+                <nav class="bars">
+                    <ul>
+                        {{#if isUserLoggedIn}}
+                        <li> <a href="/"> HOME</a> </li>
+                        <li> <a href="/aboutus"> ABOUT US </a> </li>
+                        <li> <a href="/filter"> HOST MY BASH!</a> </li> 
+                        <li> <a href="/profile"> PROFILE </a> </li>
+                        <li> <a href="/logout"> LOG OUT </a> </li>
+                        {{else}}
+                        <li> <a href="/"> HOME </a> </li>
+                        <li> <a href="/aboutus"> ABOUT US </a> </li>
+                        <li> <a href="/filter"> HOST MY BASH!</a> </li>
+                        <li> <a href="/login"> LOG IN </a> </li>
+                        {{/if}}
+                    </ul>
+                </nav>
+                <div class="main">
+                    <a href="/" alt="home">
+                        <img src="../images/hostmybash.png" alt="logo" class="logo_nav">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script>
+            const limit_size_screen = window.matchMedia('screen and (max-width: 768px)');
+            const bars = document.querySelector('.bars');
+            const barsButton = document.querySelector('#bars-button');
+
+            function validation(event) {
+                if (event.matches) {
+                    barsButton.addEventListener('click', hideShow);
+                } else {
+                    barsButton.removeEventListener('click', hideShow);
+                }
+            }
+            validation(limit_size_screen);
+
+            function hideShow() {
+                if (bars.classList.contains('is-active')) {
+                    bars.classList.remove('is-active');
+                } else {
+                    bars.classList.add('is-active');
+                }
+            }
+        </script>
+    </header>
+    {{{body}}}
 </body>
+
 </html>
