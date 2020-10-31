@@ -4,8 +4,7 @@ const { bar } = require("../public/javascripts");
 var router = express.Router();
 const Plan = require("../models/Plan");
 
-
-
+//Ruta GET para ir al formulario de reserva incluyendo los detalles de las personas, del plan, y del día
 router.get("/booking/:_id/:date/", withAuth, async (req, res, next) => {
   const num = req.query.people;
   const planId = req.params._id;

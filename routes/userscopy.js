@@ -6,14 +6,18 @@ const Plan = require("../models/Plan");
 const Booking = require("../models/Booking");
 const User = require("../models/User");
 
+//Ruta post donde recoge todos los detalles de la reserva para renderizarlos en el perfil del usuario
 router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
-  console.log("INVITADOOOOOOOOOS", req.body);
+  //console.log(req.body);
   const num = req.params.people;
+  //Necesitamos traer como un array de objetos a los invitados
   const { attendeename, attendee1lastname, attendee1phone } = req.body;
   const attendeeArr = [];
+  //Primer "for" para crear el hueco de los objetos de invitados en el array
   for (let i = 0; i < num; i++) {
     attendeeArr.push({ name: "", lastname: "", phone: null });
   }
+  //Segundo "for" coger los objetos para modificarle los valores
   for (let i = 0; i < attendeeArr.length; i++) {
     attendeeArr[i].name = attendeename[i];
     attendeeArr[i].lastname = attendee1lastname[i];
@@ -32,7 +36,6 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
       invited: attendeeArr,
     };
     //console.log(reserva);
-    //  necesitamos tener idUsuario, atendees(check), fecha (problema), idPlan(problema)
     const newBooking = await Booking.create(reserva);
     //console.log(newBooking);
     await Plan.findByIdAndUpdate(
@@ -45,7 +48,7 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
       { $push: { reservations: newBooking._id } },
       { new: true }
     );
-    res.status(200).render("users/profile", { reserva });
+    res.redirect("/filter");
   } catch (err) {
     console.log(err);
   }
