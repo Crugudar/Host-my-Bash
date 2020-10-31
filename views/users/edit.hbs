@@ -1,0 +1,16 @@
+<h4>EDIT BOOKING</h4>
+<form action="/editbookings/{{editBooking._id}}" method='POST'>
+
+    {{#each editBooking.invited}}
+     <div class="guestForm ">
+        <label for="name-input"> Attendee Name </label>
+        <input type="text" name="attendeename" id="name-input" value="{{this.name}}">
+        <label for="user -lastname-input"> Attendee LastName </label>
+        <input type="text" name="attendee1lastname" id="lastname-input" value="{{this.lastname}}">
+        <label for="user-phone-input"> Attendee Phone number </label>
+        <input type="phone" name="attendee1phone" id="phone-input" value="{{this.phone}}">
+
+    </div>
+    {{/each}}
+    <button type="submit">Confirm</button>
+</form>

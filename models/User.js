@@ -8,8 +8,8 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   isHotel: { type: Boolean, default: false },
-  reservations: [{ type: Schema.Types.ObjectId, ref: 'Plan' }],
-  plans: [{ type: String, default: null }],
+  reservations: [{ type: Schema.Types.ObjectId, ref: 'Booking' }],
+  plans: [{ type: Schema.Types.ObjectId, ref: 'Plan' }],
 });
 
 userSchema.set("timestamps", true);
