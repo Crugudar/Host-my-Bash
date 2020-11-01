@@ -10,6 +10,7 @@ const User = require("../models/User");
 //Ruta post donde recoge todos los detalles de la reserva para renderizarlos en el perfil del usuario
 router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
   //console.log(req.body);
+  
   const num = req.params.people;
   //Necesitamos traer como un array de objetos a los invitados
   const { attendeename, attendee1lastname, attendee1phone } = req.body;

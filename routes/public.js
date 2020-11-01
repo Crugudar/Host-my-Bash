@@ -1,13 +1,14 @@
 var express = require("express");
+const withAuth = require("../helpers/middleware");
 var router = express.Router();
 
 const Plan = require("../models/Plan");
 
-router.get("/filter", (req, res, next) => {
+router.get("/filter", withAuth,(req, res, next) => {
   res.render("public/filter");
 });
 
-router.get("/list/", async (req, res, next) => {
+router.get("/list/", withAuth, async (req, res, next) => {
   const { day } = req.query;
   console.log(day);
   //Creamos una variable donde decimos que encuentre todos los planes que no tengan la misma fecha que la que han solicitado
@@ -21,7 +22,7 @@ router.get("/list/", async (req, res, next) => {
   res.render("public/hotels", { reserva });
 });
 //Ruta get: veremos el detalle del plan con el ID del plan y la fecha
-router.get("/details/:_id/:date", async (req, res, next) => {
+router.get("/details/:_id/:date", withAuth, async (req, res, next) => {
   //Creamos una variable que incluya el id del plan (para que solamente muestre ese)
   const planDetail = await Plan.findById(req.params._id);
   const day = req.params.date;

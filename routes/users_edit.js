@@ -33,11 +33,20 @@ router.post("/editbookings/:_id", withAuth, async (req, res, next) => {
     attendeeArr[i].phone = attendee1phone[i];
   }
   
+
+
   const editBooking = await Booking.findByIdAndUpdate(bookingId, {invited: attendeeArr},{new: true});
 
+  const thisUser = await User.findById(req.userID).populate({
+    path: "reservations",
+    model: "Booking",
+    populate: { path: "plan", model: "Plan" },
+  });
+
+  console.log('Holiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', thisUser.reservations);
   //const thisUser = await User.findByIdAndUpdate(req.userID,{reservations})
   
-  console.log("EDIIIIITI BOOOOKING", editBooking)
+  console.log("EDIIIIITI BOOOOKING", )
   res.render("users/profile", {thisUser});
 })
 
