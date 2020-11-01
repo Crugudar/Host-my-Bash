@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif ;
   margin: 0;
 	padding: 0;
 	position: relative;
@@ -35,7 +35,9 @@ a {
 	max-width: 1024px;
 	display:flex;
 	justify-content: space-between;
-	margin: 0 auto;
+  margin: 0 auto;
+  padding-left:15px;
+  padding-top:5px;
 }
 .bars ul {
 	display: flex;
@@ -138,7 +140,7 @@ div.title h2{
 	align-content: stretch;
 }
 .logo_index{
-  width: 200px;
+  width: 150px;
   display: flex;
   align-items: center;
   padding: 50px;
@@ -183,3 +185,15 @@ div.title h2{
 }
 
 }
+
+/* footer {
+	border: 1px solid;
+	background-color:#D2BB7A ;
+	position: absolute;
+	width: 100%;
+	margin-bottom: 0;
+	height: 30px;
+	color: white;
+	font-size: 10px;
+	text-align: center;
+} */
