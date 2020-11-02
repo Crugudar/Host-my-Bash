@@ -222,72 +222,89 @@ div.title h2 {
 .title_beige {
   color: #d2bb7a;
 }
-.div_aboutus_each{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	text-align: center;
-	padding:20px
+.div_aboutus_each {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
 }
-.tab{
-	height: 30px;
-	width: 300px;
-	border-top: 1px solid #d2bb7a;
-	border-bottom: 1px solid #d2bb7a;
-	text-align: center;
-	border-right: none;
-	border-left: none;
-	font-style:italic;
+.tab {
+  height: 30px;
+  width: 300px;
+  border-top: 1px solid #d2bb7a;
+  border-bottom: 1px solid #d2bb7a;
+  text-align: center;
+  border-right: none;
+  border-left: none;
+  font-style: italic;
 }
-.tabs{
-	height:50px;
-	
-}
+
 .form {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-	height: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  /* height: 200px; */
 }
-.account{
-	font-size: 10px;
-	text-align: center;
+.account {
+  font-size: 10px;
+  text-align: center;
 }
 .login_img {
-	display:none
+  display: none;
 }
+.register_img {
+	display: none;
+  }
+
 @media screen and (min-width: 768px) {
   .img_about {
     width: 350px;
   }
   .div_aboutus {
-	display: flex;
-	flex-direction: row-reverse;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
   }
-.login_img {
-	width: 600px;
-	padding: 20px;
-	display: flex;
-
-}
-.login {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-}
+  .login_img {
+    width: 600px;
+    padding: 20px;
+    display: flex;
+  }
+  .login {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
+  .register_img {
+	width: 400px;
+    padding: 20px;
+    display: flex;
+  }
+  .register {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+  }
+  .tab {
+	height: 40px;
+	width: 400px;
+  }
 }
 
 footer {
