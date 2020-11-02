@@ -19,7 +19,7 @@ const favicon = require("serve-favicon");
 const mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost/Host-my-bash", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -43,19 +43,6 @@ var hotelsRouter = require("./routes/hotels");
 
 
 var javaScripts = require('./public/javascripts');
-
-mongoose.connect('mongodb://localhost/Host-my-bash', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err);
-  });
 
 var app = express();
 
