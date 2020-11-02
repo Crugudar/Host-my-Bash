@@ -41,8 +41,7 @@ router.get("/booking/:_id/:date/", withAuth, async (req, res, next) => {
     planDetail,
     people: num,
   };
-  console.log('rrrrrrrrrrrrrrrrrrrrrrrrrrrrr', reserva);
-
+console.log("RESERVAAAAAAAA", reserva)
   res.render("users/booking", { reserva });
 });
 
