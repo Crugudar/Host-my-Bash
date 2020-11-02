@@ -1,5 +1,5 @@
 module.exports = {
-    foo: function () {
+    one: function () {
         var today = new Date();
         var dd = today.getDate();
         var mm = today.getMonth() + 1; //January is 0!
@@ -16,7 +16,12 @@ module.exports = {
         document.getElementById("start").setAttribute("value", today);
 
     },
-    bar: function () {
+    two: function () {
+        document.getElementById('errorFilter').innerHTML('<p>You cannot select a date in the past</p>')
+    
+    },
+    three: function () {
        
+    
     }
 };

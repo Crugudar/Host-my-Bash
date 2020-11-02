@@ -6,11 +6,14 @@
 
 <input type="date" id="start" name="day"
        value=""
-       min="" max="2222-12-31">
+       min="" max="2222-12-31"
+       default="1993-02-14">
 
 <button type="submit">SEARCH</button>
 
 </form>
+
+<div class='errorMessage' id='errorFilter'></div>
 
 <!-- validamos que el usuario esté logueado para mostrar diferentes opciones en la navbar-->
   {{#if isUserLoggedIn}}
