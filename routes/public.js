@@ -1,7 +1,7 @@
 var express = require("express");
 const withAuth = require("../helpers/middleware");
 var router = express.Router();
-const { two } = require("../public/javascripts");
+const errorFilter = require("../public/javascripts");
 
 const Plan = require("../models/Plan");
 
@@ -20,7 +20,8 @@ router.get("/list/", withAuth, async (req, res, next) => {
   console.log(selected);
   if (selected<today||selected==''){
     res.redirect('/filter');
-    // two();
+    errorFilter();
+    
   }
 
   //Creamos una variable donde decimos que encuentre todos los planes que no tengan la misma fecha que la que han solicitado
