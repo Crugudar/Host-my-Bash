@@ -1,25 +1,33 @@
-<h2> Log In </h2>
+<h2 class="title_pink "> Log In </h2>
 
 {{#if errorMessage}}
-  <p class="error-message">
-    {{ errorMessage }}
-  </p>
+<p class="error-message">
+  {{ errorMessage }}
+</p>
 {{/if}}
-
-<form action="/login" method="post">
+<div class="login">
   <div>
-    <label for="email-input"> Email </label>
-    <input type="text" name="email" id="email-input"
-      placeholder="E-mail">
+    <img src="/images/wine.jpg" alt="neon" class="login_img">
   </div>
+  <form action="/login" method="post">
+    <div class="form">
+      <div class="tabs">
+        <div>
+          {{!-- <label for="email-input"> Email </label> --}}
+          <input type="text" name="email" id="email-input" placeholder="E-mail" class="tab">
+        </div>
+        <br>
+        <div>
+          {{!-- <label for="password-input"> Password </label> --}}
+          <input type="password" name="password" id="password-input" placeholder="Password" class="tab">
+        </div>
+      </div>
+      <button class="button"> Log In </button>
+      <div>
+        <p class="account"> Don't have an account?<a href="/signup"> Create an account.</a></p>
+      </div>
+    </div>
+  </form>
 
-  <div>
-    <label for="password-input"> Password </label>
-    <input type="password" name="password" id="password-input"
-      placeholder="Password">
-  </div>
 
-  <button> Log In </button>
-</form>
-
-<p> Don't have an account?<a href="/signup"> Create an account.</a></p>
+</div>

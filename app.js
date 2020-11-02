@@ -18,19 +18,7 @@ hbs.registerHelper('times', function(n, block) {
 const favicon = require("serve-favicon");
 const mongoose = require("mongoose");
 
-mongoose
-  .connect("mongodb://localhost/Host-my-bash", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then((x) => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch((err) => {
-    console.error("Error connecting to mongo", err);
-  });
+
 
 var indexRouter = require("./routes/index");
 var publicRouter = require("./routes/public");

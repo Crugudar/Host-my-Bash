@@ -4,7 +4,15 @@ var router = express.Router();
 
 const Plan = require("../models/Plan");
 
+<<<<<<< HEAD
 router.get("/filter", withAuth,(req, res, next) => {
+=======
+router.get("/aboutus", (req, res, next) => {
+  res.render("public/aboutus");
+});
+
+router.get("/filter", (req, res, next) => {
+>>>>>>> Carla-branch
   res.render("public/filter");
 });
 
