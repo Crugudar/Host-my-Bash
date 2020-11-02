@@ -5,6 +5,8 @@ body {
   position: relative;
   min-height: 100%;
   color: #273746;
+  padding: 10px;
+
 }
 
 /* COLORES
@@ -122,7 +124,7 @@ div.title h2 {
 }
 .logo_nav {
   width: 80px;
-  padding: 5px;
+  
   margin-right: 0px;
 }
 .index {
@@ -141,7 +143,7 @@ div.title h2 {
 }
 .welcome {
   background-color: #d2bb7a;
-  padding: 20px;
+
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -213,7 +215,7 @@ div.title h2 {
 .title_pink {
   color: #ffc1b4;
   text-decoration: underline;
-  padding-left: 20px;
+  
 }
 
 .img_about {
@@ -231,7 +233,7 @@ div.title h2 {
   align-items: center;
   align-content: center;
   text-align: center;
-  padding: 20px;
+  
 }
 .tab {
   height: 30px;
@@ -251,6 +253,7 @@ div.title h2 {
   justify-content: space-around;
   align-items: center;
   align-content: center;
+
   /* height: 200px; */
 }
 .account {
@@ -261,8 +264,32 @@ div.title h2 {
   display: none;
 }
 .register_img {
-	display: none;
-  }
+  display: none;
+}
+
+.hotel_list {
+  width: 300px;
+  border: 1px solid #d2bb7a;
+  border-radius: 1rem;
+  
+ 
+}
+.div_plans {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: stretch;
+}
+.seemore {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
 
 @media screen and (min-width: 768px) {
   .img_about {
@@ -278,7 +305,7 @@ div.title h2 {
   }
   .login_img {
     width: 600px;
-    padding: 20px;
+  
     display: flex;
   }
   .login {
@@ -290,8 +317,8 @@ div.title h2 {
     align-content: center;
   }
   .register_img {
-	width: 400px;
-    padding: 20px;
+    width: 400px;
+    
     display: flex;
   }
   .register {
@@ -303,8 +330,8 @@ div.title h2 {
     align-content: center;
   }
   .tab {
-	height: 40px;
-	width: 400px;
+    height: 40px;
+    width: 400px;
   }
 }
 
