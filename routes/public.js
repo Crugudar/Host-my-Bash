@@ -1,24 +1,33 @@
 var express = require("express");
 const withAuth = require("../helpers/middleware");
 var router = express.Router();
+const errorFilter = require("../public/javascripts");
 
 const Plan = require("../models/Plan");
 
-<<<<<<< HEAD
-router.get("/filter", withAuth,(req, res, next) => {
-=======
-router.get("/aboutus", (req, res, next) => {
+router.get("/aboutus", withAuth, (req, res, next) => {
   res.render("public/aboutus");
 });
 
-router.get("/filter", (req, res, next) => {
->>>>>>> Carla-branch
+router.get("/filter", withAuth, (req, res, next) => {
   res.render("public/filter");
+  
 });
 
 router.get("/list/", withAuth, async (req, res, next) => {
   const { day } = req.query;
-  console.log(day);
+  
+  let today= new Date();
+  let selected=new Date(day);
+  console.log(typeof(selected));
+  console.log('hoyyyyyyyyyyyyyyyyyyyyyyyyyyy',today);
+  console.log(selected);
+  if (selected<today||selected==''){
+    res.redirect('/filter');
+    errorFilter();
+    
+  }
+
   //Creamos una variable donde decimos que encuentre todos los planes que no tengan la misma fecha que la que han solicitado
   const availablePlans = await Plan.find({ reserved: { $ne: req.day } });
   //Creamos una variable que incluya el plan y el día para luego poder renderizarlo

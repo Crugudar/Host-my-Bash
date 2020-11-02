@@ -18,7 +18,19 @@ hbs.registerHelper('times', function(n, block) {
 const favicon = require("serve-favicon");
 const mongoose = require("mongoose");
 
-
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then((x) => {
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+  })
+  .catch((err) => {
+    console.error("Error connecting to mongo", err);
+  });
 
 var indexRouter = require("./routes/index");
 var publicRouter = require("./routes/public");
@@ -32,19 +44,6 @@ var hotelsRouter = require("./routes/hotels");
 
 var javaScripts = require('./public/javascripts');
 
-mongoose.connect('mongodb://localhost/Host-my-bash', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error('Error connecting to mongo', err);
-  });
-
 var app = express();
 
 // view engine setup
@@ -57,8 +56,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", authRouter);
 app.use("/", indexRouter);
+app.use("/", authRouter);
 app.use("/", publicRouter);
 app.use("/", usersRouter);
 app.use("/", usersCopyRouter);

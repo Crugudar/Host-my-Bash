@@ -1,6 +1,6 @@
 var express = require("express");
 const withAuth = require("../helpers/middleware");
-const { bar } = require("../public/javascripts");
+const { one } = require("../public/javascripts");
 var router = express.Router();
 const Plan = require("../models/Plan");
 const User = require("../models/User");

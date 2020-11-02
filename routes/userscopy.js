@@ -8,6 +8,7 @@ const User = require("../models/User");
 
 
 //Ruta post donde recoge todos los detalles de la reserva para renderizarlos en el perfil del usuario
+
 router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
   //console.log(req.body);
   
@@ -50,7 +51,7 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
       { $push: { reservations: newBooking._id } },
       { new: true }
     );
-    res.redirect("/filter");
+    res.render("users/confirmation");
   } catch (err) {
     console.log(err);
   }

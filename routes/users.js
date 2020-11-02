@@ -26,9 +26,15 @@ router.get("/profile", withAuth, async (req, res, next) => {
 //Ruta GET para ir al formulario de reserva incluyendo los detalles de las personas, del plan, y del día
 router.get("/booking/:_id/:date/", withAuth, async (req, res, next) => {
   const num = req.query.people;
+ 
   const planId = req.params._id;
   const planDetail = await Plan.findById(req.params._id);
   const day = req.params.date;
+  
+  
+  
+  
+  
   const reserva = {
     date: day,
     _id: planId,
