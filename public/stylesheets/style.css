@@ -6,7 +6,8 @@ body {
   min-height: 100%;
   color: #273746;
   padding: 10px;
-
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 /* COLORES
@@ -124,7 +125,7 @@ div.title h2 {
 }
 .logo_nav {
   width: 80px;
-  
+
   margin-right: 0px;
 }
 .index {
@@ -143,7 +144,7 @@ div.title h2 {
 }
 .welcome {
   background-color: #d2bb7a;
-padding: 20px;
+  padding: 20px;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -215,7 +216,6 @@ padding: 20px;
 .title_pink {
   color: #ffc1b4;
   text-decoration: underline;
-  
 }
 
 .img_about {
@@ -227,7 +227,7 @@ padding: 20px;
 }
 
 .title_grey {
-	color:#273746
+  color: #273746;
 }
 .div_aboutus_each {
   display: flex;
@@ -237,7 +237,6 @@ padding: 20px;
   align-items: center;
   align-content: center;
   text-align: center;
-  
 }
 .tab {
   height: 30px;
@@ -276,58 +275,93 @@ padding: 20px;
   border: 1px solid #d2bb7a;
   border-radius: 50px;
   background-color: #d2bb7a;
-color: white;
-
+  color: white;
 }
 .title_box {
-	width: 250px;
-	text-align: center;
+  width: 250px;
+  text-align: center;
+  margin: 5px;
 }
-.div_box {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: center;
-	align-content: stretch;
+.div_box  {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
 }
 
 .seemore {
-	color: black
+  color: black;
+  text-decoration: none;
+  font-weight: 700;
 }
 .filter {
-	border-radius: 50px;
-	border: 2px solid white;
-	color: #d2bb7a;
-	background-color: white;
-	height: 50px;
-	width: 200px;
-	font-size: 16px;
-	text-align: center;
-	
-	
+  border-radius: 50px;
+  border: 2px solid white;
+  color: #d2bb7a;
+  background-color: white;
+  height: 50px;
+  width: 200px;
+  font-size: 16px;
+  text-align: center;
 }
 .img_filter {
-	background: url(../images/filter.jpg) no-repeat center center /cover;
-	background-color: rgba(255, 255, 255, 0.719);
-	background-blend-mode: lighten;
-	height:400px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
+  background: url(../images/filter.jpg) no-repeat center center / cover;
+  background-color: rgba(255, 255, 255, 0.719);
+  background-blend-mode: lighten;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
 }
 .calendar {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
 }
 .img_hotels {
-	width: 200px;
+  width: 200px;
 }
+.booking {
+ display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  text-align: center;
+  border: 1px solid #d2bb7a;
+  border-radius: 50px;
+  
+}
+.people {
+	text-align: center;
+	display: flex;
+  justify-content: space-between;
+}
+.img_booking {
+	width: 200px;
+	padding-top: 15px
+}
+.plan_details {
+	padding: 20px
+}
+.button_pink {
+	font-size: 1rem;
+	padding: 0.5rem;
+	border: 1px solid #FFC1B4;
+	color: #FFC1B4;
+	text-align: center;
+	border-radius: 1rem;
+	background-color: white;
+	text-decoration: none;
+	margin: auto;
+  }
 
 @media screen and (min-width: 768px) {
   .img_about {
@@ -343,7 +377,7 @@ color: white;
   }
   .login_img {
     width: 600px;
-  
+
     display: flex;
   }
   .login {
@@ -356,7 +390,7 @@ color: white;
   }
   .register_img {
     width: 400px;
-    
+
     display: flex;
   }
   .register {
@@ -371,15 +405,22 @@ color: white;
     height: 40px;
     width: 400px;
   }
-
-
-
-
+  .booking {
+	display: flex;
+	 flex-direction: row;
+	 flex-wrap: nowrap;
+	 justify-content: space-between;
+	 align-items: center;
+	 align-content: stretch;
+	 text-align: center;
+	
+	
+   }
+   .img_booking {
+	   width: 350px;
+	   padding: 20px;
+   }
 }
-
-
-
-
 
 footer {
   position: absolute;

@@ -1,25 +1,29 @@
 <h2 class="title_pink">YOUR FAVOURITE PLAN.</h2>
 <div>
-    <div>
-        <img  src="{{reserva.planDetail.image}}" alt="reserva" class="img_about">
+    <div class="booking">
+        <div>
+            <img src="{{reserva.planDetail.image}}" alt="reserva" class="img_booking">
+        </div>
+        <div class ="plan_details">
+            <h3 class="title_beige">{{reserva.planDetail.planName}}</h3>
+            <p>{{reserva.planDetail .description}} </p>
+            <p clasS="title_pink">Plane date: {{reserva.date}}</p>
+        </div>
     </div>
-    <div >
-        <h2 class="title_beige">{{reserva.planDetail.planName}}</h2>
-        <h4 class="title_grey">{{reserva.planDetail.description}} </h4>
-        <h5>Date: {{reserva.date}}</h5> 
+    <br>
+    <div class="people">
+        <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
+            <label for="atendees">With how many people do you want to share this plan? Bear in mind that due to COVID
+                restrictions the maximum capacity is
+                6 people <b>INCLUDING YOURSELF</b>:</label>
+            <select name="people" id="people" class="button_pink">
+                <option id='guestCount2' value="2">2</option>
+                <option id='guestCount3' value="3">3</option>
+                <option id='guestCount4' value="4">4</option>
+                <option id='guestCount5' value="5">5</option>
+                <option id='guestCount6' value="6">6</option>
+            </select>
+            <button type="submit" class="button">Book it!</button>
+        </form>
     </div>
-
-    <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
-        <label for="atendees">How many people are comming. Bear in mind that due to COVID times the maximum capacity is 6 people <b>INCLUDING YOURSELF</b>:</label>
-        <select name="people" id="people">
-        <option id='guestCount2'value="2">2</option>
-        <option id='guestCount3'value="3">3</option>
-        <option id='guestCount4'value="4">4</option>
-        <option id='guestCount5'value="5">5</option>
-        <option id='guestCount6'value="6">6</option>
-</select>
-
-    <button type="submit">Book it!</button>   
-    </form>
-   
 </div>
