@@ -313,6 +313,9 @@ div.title h2 {
   text-align: center;
   display: flex;
   justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px;
 }
 .img_booking {
   width: 200px;
@@ -355,6 +358,9 @@ div.title h2 {
 }
 .plan:hover{
 background-color: #eeddad;
+}
+.bookit {
+	padding: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -414,6 +420,10 @@ background-color: #eeddad;
   }
   .img_filter {
     height: 500px;
+  }
+  .details_page{
+	  max-width: 960px;
+	  margin: 0 auto;
   }
 }
 errorMessage {
