@@ -1,6 +1,7 @@
 
     
-function errorFilter() {
-        document.getElementById('errorFilter').innerHTML('<p>You cannot select a date in the past</p>')
+function mensajito() {
+        // document.getElementById('errorFilter').innerHTML('<p>You cannot select a date in the past</p>');
+        
+        console.log('Holiiiiiiiiiiiiiiiiiiiiii');
         }
-module.exports=errorFilter;

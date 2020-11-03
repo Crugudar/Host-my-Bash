@@ -1,10 +1,24 @@
-<h3>My Profile </h3>
+<h3>{{thisUser.username}}'s Profile </h3>
+<img src="{{thisUser.imgPath}}" alt="">
+
+<p><a href='/profilephoto'>UPLOAD</a> a photo for your profile</p>
+{{!-- <form action="profile-photo/add" method="post" enctype="multipart/form-data">
+    <label>Photo</label>
+    <input type="file" name="photo">
+</form> --}}
+
+
 {{#each thisUser.reservations}}
 <h4>{{this.plan.date}}</h4>
 <h4>{{this.plan.description}}</h4>
 <h4>{{this.plan.invited}}</h4>
 <h4>{{this.plan.planName}}</h4>
+
+
+
 {{#each this.invited}}<h4>{{this.name}}, {{this.lastname}}</h4>{{/each}}
+
+
 <a href="/editbookings/{{this._id}}">Edit</a>
 <a href='/delete/{{this._id}}'>Delete</a>
 {{/each}}

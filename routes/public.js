@@ -1,7 +1,7 @@
 var express = require("express");
 const withAuth = require("../helpers/middleware");
 var router = express.Router();
-const errorFilter = require("../public/javascripts");
+const error = require("../public/javascripts");
 
 const Plan = require("../models/Plan");
 
@@ -19,12 +19,15 @@ router.get("/list/", withAuth, async (req, res, next) => {
   
   let today= new Date();
   let selected=new Date(day);
-  console.log(typeof(selected));
+ 
   console.log('hoyyyyyyyyyyyyyyyyyyyyyyyyyyy',today);
   console.log(selected);
-  if (selected<today||selected==''){
-    res.redirect('/filter');
-    errorFilter();
+  if (selected<today){
+    let error={
+      err:'You cannot select dates in the past'
+    };
+    res.render('public/filter', {error} );
+    
     
   }
 
