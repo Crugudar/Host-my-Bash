@@ -1,9 +1,9 @@
 <div class="profile_page">
     <h2 class="title_pink">{{thisUser.username}}'s PROFILE. </h2>
 
-
+    {{#if thisUser.imgPath}}
     <img src="{{thisUser.imgPath}}" alt="">
-
+    {{/if}}
     <p><a href='/profilephoto'>UPLOAD</a> a photo for your profile</p>
     {{!-- <form action="profile-photo/add" method="post" enctype="multipart/form-data">
     <label>Photo</label>
@@ -27,9 +27,9 @@
         </div>
         <div class="booking_actions">
             <a href="/editbookings/{{this._id}}" class="button">Edit</a>
-            <a href='/delete/{{this._id}}'class="button">Delete</a>
+            <a href='/delete/{{this._id}}' class="button">Delete</a>
         </div>
     </div>
     {{/each}}
-    <a href='/filter'>Search more plans</a>
+    
 </div>
