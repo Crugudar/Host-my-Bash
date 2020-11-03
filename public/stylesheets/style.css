@@ -20,6 +20,17 @@ a {
   text-decoration: none;
 }
 
+input[type='text'],
+input[type='password'],
+input[type='phone']{
+	border-top: 1px solid #d2bb7a;
+    border-bottom: 1px solid #d2bb7a;
+	text-align: center;
+	border-right: none;
+	border-left: none;
+	font-style: italic;
+}
+
 .navbar {
   width: 100%;
   padding: 5px;
@@ -240,12 +251,6 @@ div.title h2 {
 .tab {
   height: 30px;
   width: 300px;
-  border-top: 1px solid #d2bb7a;
-  border-bottom: 1px solid #d2bb7a;
-  text-align: center;
-  border-right: none;
-  border-left: none;
-  font-style: italic;
 }
 
 .form {
@@ -361,6 +366,24 @@ background-color: #eeddad;
 }
 .bookit {
 	padding: 20px;
+}
+.guest-input {
+	padding:10px;
+}
+.guest {
+
+}
+.profile_page > .booking {
+margin: 15px;
+}
+.booking_actions {
+	display: flex;
+}
+.booking_actions > .button {
+	margin: 15px;
+}
+.plan_details > ul {
+	margin: 0;
 }
 
 @media screen and (min-width: 768px) {
