@@ -9,9 +9,13 @@
        min="" max="2222-12-31"
        default="1993-02-14">
 
-<button type="submit">SEARCH</button>
+<button type="submit" >SEARCH</button>
 
 </form>
+
+{{#if error}}
+<p>{{error.err}}</p>
+{{/if}}
 
 <div class='errorMessage' id='errorFilter'></div>
 
@@ -27,3 +31,4 @@
       <li> <a href="/login"> Log In </a> </li> 
   {{/if}}
 
+<script src='javascripts.js'></script>

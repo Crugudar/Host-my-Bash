@@ -26,20 +26,24 @@ router.get("/profile", withAuth, async (req, res, next) => {
 //Ruta GET para ir al formulario de reserva incluyendo los detalles de las personas, del plan, y del día
 router.get("/booking/:_id/:date/", withAuth, async (req, res, next) => {
   const num = req.query.people;
+  const inviting=(req.query.people)-1;
  
   const planId = req.params._id;
   const planDetail = await Plan.findById(req.params._id);
   const day = req.params.date;
-  
-  
-  
-  
+  const thisUser= await User.findById(req.userID);
+
+  //console.log('usuario que va a hecer una reserva',thisUser);
+
   
   const reserva = {
+    name:thisUser.username,
+    lastname:thisUser.lastname,
     date: day,
     _id: planId,
     planDetail,
     people: num,
+    inviting:inviting,
   };
 console.log("RESERVAAAAAAAA", reserva)
   res.render("users/booking", { reserva });
