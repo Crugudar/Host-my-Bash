@@ -17,6 +17,7 @@ body {
 
 a {
   color: #d2bb7a;
+  text-decoration: none;
 }
 
 .navbar {
@@ -183,12 +184,12 @@ div.title h2 {
     align-content: flex-end;
   }
   .welcome {
-    flex:1;
+    flex: 1;
   }
   .same_divs_img {
-   flex:1;
-   display: flex;
-   place-content: center;
+    flex: 1;
+    display: flex;
+    place-content: center;
   }
   .logo_index {
     width: 300px;
@@ -268,32 +269,6 @@ div.title h2 {
   display: none;
 }
 
-.hotel_list {
-  width: 300px;
-  border: 1px solid #d2bb7a;
-  border-radius: 50px;
-  background-color: #d2bb7a;
-  color: white;
-}
-.title_box {
-  width: 250px;
-  text-align: center;
-  margin: 5px;
-}
-.div_box  {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  align-content: stretch;
-}
-
-.seemore {
-  color: black;
-  text-decoration: none;
-  font-weight: 700;
-}
 .filter {
   border-radius: 50px;
   border: 2px solid white;
@@ -308,7 +283,7 @@ div.title h2 {
   background: url(../images/filter.jpg) no-repeat center center / cover;
   background-color: rgba(255, 255, 255, 0.719);
   background-blend-mode: lighten;
-  height: 400px;
+  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,11 +297,9 @@ div.title h2 {
   align-items: center;
   align-content: stretch;
 }
-.img_hotels {
-  width: 200px;
-}
+
 .booking {
- display: flex;
+  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-around;
@@ -335,31 +308,54 @@ div.title h2 {
   text-align: center;
   border: 1px solid #d2bb7a;
   border-radius: 50px;
-  
 }
 .people {
-	text-align: center;
-	display: flex;
+  text-align: center;
+  display: flex;
   justify-content: space-between;
 }
 .img_booking {
-	width: 200px;
-	padding-top: 15px
+  width: 200px;
+  padding-top: 15px;
 }
 .plan_details {
-	padding: 20px
+  padding: 20px;
 }
 .button_pink {
-	font-size: 1rem;
-	padding: 0.5rem;
-	border: 1px solid #FFC1B4;
-	color: #FFC1B4;
-	text-align: center;
-	border-radius: 1rem;
-	background-color: white;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ffc1b4;
+  color: #ffc1b4;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: white;
+  text-decoration: none;
+  margin: auto;
+}
+.plan_list {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+	place-content: center;
+}
+.plan {
+	width: 200px;
+    margin: 10px;
+    border: 1px solid #d2bb7a;
+	padding: 5px;
 	text-decoration: none;
-	margin: auto;
-  }
+	color:#273746;
+	text-align: center;
+	min-height: 200px;
+}
+.plan>img {
+	width: 100%;
+	object-fit: cover;
+    height: 150px;
+}
+.plan:hover{
+background-color: #eeddad;
+}
 
 @media screen and (min-width: 768px) {
   .img_about {
@@ -404,23 +400,23 @@ div.title h2 {
     width: 400px;
   }
   .booking {
-	display: flex;
-	 flex-direction: row;
-	 flex-wrap: nowrap;
-	 justify-content: space-between;
-	 align-items: center;
-	 align-content: stretch;
-	 text-align: center;
-	
-	
-   }
-   .img_booking {
-	   width: 350px;
-	   padding: 20px;
-   }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
+    text-align: center;
+  }
+  .img_booking {
+    width: 350px;
+    padding: 20px;
+  }
+  .img_filter {
+    height: 500px;
+  }
 }
-errorMessage{
-
+errorMessage {
 }
 footer {
   position: absolute;
