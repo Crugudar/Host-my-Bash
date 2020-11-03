@@ -1,16 +1,13 @@
 <h2 class="title_pink">AVAILABLE PLANS FOR {{reserva.date}}.</h2>
 
-<div>
+<div class="plan_list">
    {{#each reserva.availablePlans}}
-   <div class="hotel_list">
-      <div class="div_box ">
-         <h3 class="title_box">{{this.planName}}</h3>
-         <div>
-            <img src="{{this.image}}" alt="portada" class="img_hotels">
-            <a href="/details/{{this.id}}/{{../reserva.date}}" class="seemore">>></a>
-         </div>
-      </div>
+   <a href="/details/{{this.id}}/{{../reserva.date}}">
+   <div class="plan">
+      <h3>{{this.planName}}</h3>
+      <img src="{{this.image}}" alt="portada">
+      
    </div>
-   <br>
+   </a>
    {{/each}}
 </div>

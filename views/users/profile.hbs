@@ -1,25 +1,35 @@
-<h3>{{thisUser.username}}'s Profile </h3>
-<img src="{{thisUser.imgPath}}" alt="">
+<div class="profile_page">
+    <h2 class="title_pink">{{thisUser.username}}'s PROFILE. </h2>
 
-<p><a href='/profilephoto'>UPLOAD</a> a photo for your profile</p>
-{{!-- <form action="profile-photo/add" method="post" enctype="multipart/form-data">
+    {{#if thisUser.imgPath}}
+    <img src="{{thisUser.imgPath}}" alt="">
+    {{/if}}
+    <p><a href='/profilephoto'>UPLOAD</a> a photo for your profile</p>
+    {{!-- <form action="profile-photo/add" method="post" enctype="multipart/form-data">
     <label>Photo</label>
     <input type="file" name="photo">
 </form> --}}
 
 
-{{#each thisUser.reservations}}
-<h4>{{this.plan.date}}</h4>
-<h4>{{this.plan.description}}</h4>
-<h4>{{this.plan.invited}}</h4>
-<h4>{{this.plan.planName}}</h4>
-
-
-
-{{#each this.invited}}<h4>{{this.name}}, {{this.lastname}}</h4>{{/each}}
-
-
-<a href="/editbookings/{{this._id}}">Edit</a>
-<a href='/delete/{{this._id}}'>Delete</a>
-{{/each}}
-<a href='/filter'>Search more plans</a>
+    {{#each thisUser.reservations}}
+    <div class="booking">
+        <div>
+            <img src="{{this.plan.image}}" alt="reserva" class="img_booking">
+        </div>
+        <div class="plan_details">
+            <h3 class="title_beige">{{this.plan.planName}}</h3>
+            <p>{{this.plan.description}} </p>
+            <p class="title_pink">Plan date: {{this.date}}</p>
+            <h4>Attendees:</h4>
+            <ul>
+                {{#each this.invited}}<li>{{this.name}} {{this.lastname}}</li>{{/each}}
+            </ul>
+        </div>
+        <div class="booking_actions">
+            <a href="/editbookings/{{this._id}}" class="button">Edit</a>
+            <a href='/delete/{{this._id}}' class="button">Delete</a>
+        </div>
+    </div>
+    {{/each}}
+    
+</div>

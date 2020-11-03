@@ -1,38 +1,44 @@
-<h3>BOOKING DETAILS</h3>
-
-<div>
-        <img  src="{{reserva.planDetail.image}}" alt="reserva" class="img_about">
+<h2 class="title_pink">BOOKING DETAILS.</h2>
+<div class="booking">
+    <div>
+        <img src="{{reserva.planDetail.image}}" alt="reserva" class="img_booking">
     </div>
-    <div >
-        <h3>{{reserva.planDetail.planName}}</h3>
-        <h4>{{reserva.planDetail.description}} </h4>
-        <h5>Plane date: {{reserva.date}}</h5> 
+    <div class="plan_details">
+        <h3 class="title_beige">{{reserva.planDetail.planName}}</h3>
+        <p>{{reserva.planDetail .description}} </p>
+        <p clasS="title_pink">Plan date: {{reserva.date}}</p>
     </div>
-
+</div>
 
 {{#if isUserLoggedIn }}
 
 
 <form id='formGuest' action="/booking/{{reserva._id}}/{{reserva.date}}/{{reserva.people}}" method="post">
 
-    <div class="guestForm hidden">
-        <label for="name-input"> Attendee Name </label>
-        <input type="text" name="attendeename" id="name-input" value="{{reserva.name}}">
-        <label for="user -lastname-input"> Attendee 1 LastName </label>
-        <input type="text" name="attendee1lastname" id="lastname-input" value="{{reserva.lastname}}">
-        <label for="user-phone-input"> Attendee 1 Phone number </label>
-        <input type="phone" name="attendee1phone" id="phone-input" placeholder=" Phone number">
+    <div class="guest">
+        <div class="guest-input">
+            <label for="name-input" class="title_beige"> Attendee Name: </label>
+            <input type="text" name="attendeename" id="name-input" value="{{reserva.name}}">
+        </div>
+        <div class="guest-input">
+            <label for="user -lastname-input" class="title_beige"> Attendee Lastname: </label>
+            <input type="text" name="attendee1lastname" id="lastname-input" value="{{reserva.lastname}}">
+        </div>
+        <div class="guest-input">
+            <label for="user-phone-input" class="title_beige"> Attendee Phone: </label>
+            <input type="phone" name="attendee1phone" id="phone-input" placeholder=" Phone number">
+        </div>
 
     </div>
 
     {{#times reserva.inviting}}
     <div class="guestForm hidden">
         <label for="name-input"> Attendee Name </label>
-        <input type="text" name="attendeename" id="name-input" placeholder="Attendee 1 Name">
-        <label for="user -lastname-input"> Attendee 1 LastName </label>
-        <input type="text" name="attendee1lastname" id="lastname-input" placeholder="Attendee 1 LastName">
-        <label for="user-phone-input"> Attendee 1 Phone number </label>
-        <input type="phone" name="attendee1phone" id="phone-input" placeholder="Attendee 1 Phone number">
+        <input type="text" name="attendeename" id="name-input" placeholder="Attendee Name">
+        <label for="user -lastname-input"> Attendee LastName </label>
+        <input type="text" name="attendee1lastname" id="lastname-input" placeholder="Attendee LastName">
+        <label for="user-phone-input"> Attendee Phone number </label>
+        <input type="phone" name="attendee1phone" id="phone-input" placeholder="Attendee Phone number">
 
     </div>
     {{/times}}

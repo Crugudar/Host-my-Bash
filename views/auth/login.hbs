@@ -1,16 +1,13 @@
 
 
-{{#if errorMessage}}
-<p class="error-message">
-  {{ errorMessage }}
-</p>
-{{/if}}
+
 <div class="login">
-  <div>
+  <div class="login_flex">
     <img src="/images/wine.jpg" alt="neon" class="login_img">
   </div>
+   <div class="login_flex form">
   <form action="/login" method="post">
-    <div class="form">
+   
       <h2 class="title_pink "> LOG IN.</h2>
       <div >
         <div>
@@ -27,9 +24,15 @@
       <div>
         <button class="button"> Log In </button>
       </div>
+      {{#if errorMessage}}
+<p class="error-message">
+  {{ errorMessage }}
+</p>
+{{/if}}
       <div>
         <p class="account"> Don't have an account?<a href="/signup"> Create an account.</a></p>
       </div>
-    </div>
+   
   </form>
+   </div>
 </div>

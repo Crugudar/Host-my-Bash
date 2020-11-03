@@ -15,7 +15,7 @@ router.get("/profile", withAuth, async (req, res, next) => {
     populate: { path: "plan", model: "Plan" },
   });
 
-  //console.log(thisUser.reservations[0]);
+  console.log(thisUser);
   res.render("users/profile", { thisUser });
   } catch (error) {
     console.log(error)
