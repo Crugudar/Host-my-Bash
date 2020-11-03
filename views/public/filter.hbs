@@ -1,17 +1,12 @@
-<h2 class="title_pink">HOST MY HASH.</h2>
+<h2 class="title_pink">HOST MY BASH.</h2>
 
-
-<form action="/list" method="get">
-<label for="start" >Select your date</label>
-
-<input type="date" id="start" name="day"
-       value=""
-       min="" max="2222-12-31"
-       default="1993-02-14">
-<div>
-<button type="submit" class="button">SEARCH</button>
+<div class="img_filter">
+  <div class="calendar">
+    <h2 class="title_grey ">Select the date:</h2>
+    <form action="/list" method="get">
+      <input type="date" id="start" name="day" value="" min="" max="2222-12-31" default="1993-02-14" class="filter">
+      <button type="submit" class="button">Search</button>
+    </form>
+  </div>
 </div>
-</form>
-
 <div class='errorMessage' id='errorFilter'></div>
-

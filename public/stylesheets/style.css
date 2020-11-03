@@ -143,7 +143,7 @@ div.title h2 {
 }
 .welcome {
   background-color: #d2bb7a;
-
+padding: 20px;
   height: 50%;
   display: flex;
   flex-direction: column;
@@ -225,6 +225,10 @@ div.title h2 {
 .title_beige {
   color: #d2bb7a;
 }
+
+.title_grey {
+	color:#273746
+}
 .div_aboutus_each {
   display: flex;
   flex-direction: row;
@@ -290,6 +294,36 @@ div.title h2 {
 	align-items: center;
 	align-content: stretch;
 }
+.filter {
+	border-radius: 50px;
+	border: 2px solid white;
+	color: #d2bb7a;
+	background-color: white;
+	height: 50px;
+	width: 200px;
+	font-size: 16px;
+	text-align: center;
+	
+	
+}
+.img_filter {
+	background: url(../images/filter.jpg) no-repeat center center /cover;
+	background-color: rgba(255, 255, 255, 0.719);
+	background-blend-mode: lighten;
+	height:400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.calendar {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
 
 @media screen and (min-width: 768px) {
   .img_about {
@@ -333,7 +367,14 @@ div.title h2 {
     height: 40px;
     width: 400px;
   }
+
+
+
 }
+
+
+
+
 
 footer {
   position: absolute;
