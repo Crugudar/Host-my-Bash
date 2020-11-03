@@ -183,12 +183,12 @@ div.title h2 {
     align-content: flex-end;
   }
   .welcome {
-    height: 500px;
-    width: 1000px;
+    flex:1;
   }
-  .same_divs {
-    width: 100%;
-    float: left;
+  .same_divs_img {
+   flex:1;
+   display: flex;
+   place-content: center;
   }
   .logo_index {
     width: 300px;
