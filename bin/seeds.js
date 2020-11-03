@@ -8,8 +8,8 @@ const plans = [
   {
     image:
       "https://tecnohotelnews.com/wp-content/uploads/2020/05/roberto-nickson-h1_ILkb9tLo-unsplash.jpg",
-    planName: "Piscina- Hotel palace",
-    description: "Atardecer, música unas copas y amigos en un ambiente único",
+    planName: "Pool party- Hotel Palace",
+    description: "The sunset, amazing music, some drinks and your friends in a unique atmosphere ",
     streetName: "Passeig de Gracia",
     streetNumber: 103,
     city: "Barcelona",
@@ -18,10 +18,9 @@ const plans = [
   },
   {
     image:
-      "https://www.hotelartsbarcelona.com/app/uploads/2017/09/p41-bar-mural-inocuo-hotel-arts-barcelona-980x980.jpg",
-    planName: "Bar- Hotel Arts",
-    description:
-      "Disfruta junto con 5 amigos de una exhibición de cocktelería en el bar de huestro hotel junto con la degustación de varios cóckteles personalizados según los gustos de los asistentes",
+      "https://1806.com.au/wp-content/uploads/2015/05/Bar-1806-9-scaled.jpg",
+    planName: "Cocktail making exhibition at our Bar- Hotel Arts",
+    description:"Enjoy, together with 5 friends, a cocktail exhibition at the hotel's bar along with the tasting of various personalized cocktails according to the tastes of the attendees",
     streetName: "Carrer de la Marina",
     streetNumber: 19,
     zipcode: 08005,
@@ -30,10 +29,10 @@ const plans = [
   },
   {
     image:
-      "https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2018/05/28/15275217975215.jpg",
-    planName: "Piscina y magia- Hotel Arts",
+      "https://www.incimages.com/uploaded_files/image/1920x1080/getty_509420146_353481.jpg",
+    planName: "Pool and magic - Hotel Arts",
     description:
-      "Show de magia con las mejores vistas de la ciudad. Seguidas de un picoteo preparado por nuestros chefs",
+      "Magic show with the best views of the city. Followed by a snack prepared by our amazing chefs",
     streetName: "Carrer de la Marina",
     streetNumber: 19,
     zipcode: 08005,
@@ -42,10 +41,10 @@ const plans = [
   },
   {
     image:
-      "https://www.hotelartsbarcelona.com/app/uploads/2017/10/enoteca_paco_perez_hotel_arts_horiz.jpg",
-    planName: "Cena degustación- Hotel Arts",
+      "https://tastychomps.com/wp-content/uploads/2018/11/ORL_TOKYOSOUL_ASSETS_8.jpg",
+    planName: "Tasting dinner- Hotel Arts",
     description:
-      "Os reservamos un cómedor íntimo para poder disfrutar de las creaciones de los chefs Alejandro Lozano y Mónica Divé",
+      "We reserve an intimate dinning room for you to enjoy the creations of chefs Alejandro Lozano and Mónica Divé",
     streetName: "Carrer de la Marina",
     streetNumber: 19,
     zipcode: 08005,
@@ -54,9 +53,9 @@ const plans = [
   },
   {
     image:
-      "https://travesiasdigital.com/wp-content/uploads/2019/05/royal-bar-hotel-palace-tokio-japon.jpg",
-    planName: "Tarde de póker- Hotel palace",
-    description: "Amigos, cartas y las mejores bebidas en nuetro bar",
+      "https://welcometoibiza.com/wp-content/uploads/Casino-Ibiza-Gran-Hotel-Ibiza-07.jpg",
+    planName: "Poker evening- Hotel palace",
+    description: "Get ready for an afternoon with class, excitement and good luck, in the poker game that we will organize for you.",
     streetName: "Passeig de Gracia",
     streetNumber: 103,
     city: "Barcelona",
@@ -64,10 +63,10 @@ const plans = [
     phone: 934567890,
   },
   {
-    image: "https://cf.bstatic.com/images/hotel/max1024x768/132/132938846.jpg",
-    planName: "Masaje y merienda- Hotel palace",
+    image: "https://media-cdn.tripadvisor.com/media/photo-s/06/e4/e5/11/catheriya-thai-massage.jpg",
+    planName: "Tea and massage- Hotel palace",
     description:
-      "Tenéis para vosotros una tarde relajante, un masaje, música y una selección de platos para que tu tarde y la de tus amigos sea la más dulce",
+      "Have a relaxing afternoon: a massage, music and a selection of tea and pastries so that your afternoon is the sweetest",
     streetName: "Passeig de Gracia",
     streetNumber: 103,
     zipcode: 08007,
@@ -76,10 +75,10 @@ const plans = [
   },
   {
     image:
-      "https://www.estivalpark.es/hotels/park/files/content/hotel/fotos-habitacion/Suite-Hotel-II-6.jpg",
-    planName: "Manicura y peluqueria- Hotel Estival Park",
+      "https://img.freepik.com/free-photo/girls-enjoying-spa-day-with-glass-champagne_23-2148238343.jpg?size=626&ext=jpg",
+    planName: "Manicure and hairdressing- Hotel Estival Park",
     description:
-      "Tarde de mimos: poneos guapos uno a uno mientras el resto disfruta de una botella de vino cortesía de la casa ",
+      "Pamper yourselves for a whole afternoon getting a hair makeover and getting the finnest manicure, while enjoyimg a bottle of champagne on the house",
     streetName: "Granvia de les Corts Catalanes",
     streetNumber: 289,
     zipcode: 08011,
@@ -91,7 +90,7 @@ const plans = [
       "https://media-cdn.tripadvisor.com/media/photo-s/0e/1d/22/73/disco-redlight.jpg",
     planName: "Disco- Hotel Estival Park",
     description:
-      "¿Echas de menos las discotecas? Nosotros también. Por eso abrimos la nuestra una vez cada día para que 6 afortunados puedan bailar hasta reventar sin temor al virus",
+      " Do you miss the discos? We too. That's why we open ours once a day so that 6 lucky people can dance until they can't anymore without fear of the virus",
     streetName: "Granvia de les Corts Catalanes",
     streetNumber: 289,
     zipcode: 08011,
@@ -99,10 +98,10 @@ const plans = [
     phone: 934567890,
   },
   {
-    image: "https://cf.bstatic.com/images/hotel/max1280x900/186/186427456.jpg",
-    planName: "Cena íntima- Hotel Estival Park",
+    image: "https://gazzettahedone.mx/wp-content/uploads/2019/05/DSC_2698.jpg",
+    planName: "Blind dinner- Hotel Estival Park",
     description:
-      "Cena a oscuras, como en los restaurantes más exclusivos de las grandes capitales europeas traido por el Hotel Estival Park para un máximo de 6 afortunados",
+      "Dinner in the dark, as in the most exclusive restaurants in the great European capitals brought by the Hotel Estival Park for a maximum of 6 lucky people",
     streetName: "Granvia de les Corts Catalanes",
     streetNumber: 289,
     zipcode: 08011,
@@ -111,9 +110,9 @@ const plans = [
   },
   {
     image: "https://media.timeout.com/images/105476110/image.jpg",
-    planName: "Fista de disfraces en el Rooftop- Hotel H10 Puerta de Alcalá",
+    planName: "Costume party on the Rooftop- Hotel H10 Puerta de Alcalá",
     description:
-      "Tú trae a tus amigos y los disfraces, del resto nos ocupamos nosotros",
+      "You bring your friends and the costumes, we'll take care of the rest",
     streetName: "Calle de Alcalá",
     streetNumber: 66,
     zipcode: 28009,
@@ -121,10 +120,10 @@ const plans = [
     phone: 934567890,
   },
   {
-    image: "https://www.venuesplace.com/ficheros/1vqdVYnT/66YBeIiM_t4.jpg",
-    planName: "Clase de cockteleria- Hotel H10 Puerta de Alcalá",
+    image: "https://celiaeig.com/images_db/imgsNews/134_.jpg",
+    planName: "Cocktail class- Hotel H10 Puerta de Alcalá",
     description:
-      "Pues eso, cóckteles amigos y aprender trucos que te harán ser el centro de la fiesta",
+      "Cocktails friends and learning tricks that will make the center of the party",
     streetName: "Calle de Alcalá",
     streetNumber: 66,
     zipcode: 28009,
@@ -132,10 +131,10 @@ const plans = [
     phone: 934567890,
   },
   {
-    image: "https://vive-media-tpvbooking.netdna-ssl.com/36550/17.jpg",
-    planName: "Trade de cine- Hotel H10 Puerta de Alcalá",
+    image: "https://ksr-ugc.imgix.net/assets/013/602/870/fd327ba0b7859b9414547aecb7ee7003_original.jpg?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1474433599&auto=format&frame=1&q=92&s=c6b555cba73ca064439a27ab135c4707",
+    planName: "Mystery afternoon- Hotel H10 Puerta de Alcalá",
     description:
-      "Dinos, ¿cuál es esa peli que te encanta y quieres compartir con los tuyos? Nosotros la proyectamos en pantalla grande y os proporcionamos todo lo necesario para que sea una tarde inolvidable",
+      " The terrible murder of our hotel owner has taken place and we need the best detectives to find the culprit and solve the mystery",
     streetName: "Calle de Alcalá",
     streetNumber: 66,
     zipcode: 28009,
@@ -144,10 +143,10 @@ const plans = [
   },
   {
     image:
-      "https://q-xx.bstatic.com/xdata/images/hotel/max500/83905009.jpg?k=5de796bfdb1cc63039613c44f7fd49c58b536c4d371b5801a6507ae5c6067d2c&o=",
-    planName: "Suite- B&B Hotel Madrid Centro Puerta del Sol",
+      "https://www.vinetur.com/imagenes/2017/noviembre/30/cata_vinos.jpg",
+    planName: "Wine tasting B&B Hotel Madrid Centro Puerta del Sol",
     description:
-      "Tarde de mimos: poneos guapos uno a uno mientras el resto disfruta de una botella de vino cortesía de la casa ",
+      "Learn to enjoy wine to another level in this exclusive wine tasting accompanied by a cheese pairing made in heaven",
     streetName: "Calle de la Montera",
     streetNumber: 10,
     zipcode: 28013,
@@ -156,10 +155,10 @@ const plans = [
   },
   {
     image:
-      "https://res.cloudinary.com/hzekpb1cg/image/upload/q_95%2Cf_auto/s3/public/prod/s3fs-public/hotel-madrid-puerta-del-sol-coffee.jpg",
+      "https://www.nescafe.com/es/sites/g/files/dzyqzn2471/files/styles/topic_intro_large/public/coffee-collection-campaigns_1.jpg?itok=F5Y19G5W",
     planName:
-      "Degustación de café en nuestro Coffee shop- B&B Hotel Madrid Centro Puerta del Sol",
-    description: "¿Adictos al café? Bienvenidos a vuestra casa!!",
+      "Coffee tasting in our Coffee shop- B&B Hotel Madrid Centro Puerta del Sol",
+    description: "Coffee addicts? Welcome to your home !!",
     streetName: "Calle de la Montera",
     streetNumber: 10,
     zipcode: 28013,
@@ -169,10 +168,9 @@ const plans = [
 
   {
     image:
-      "https://y.cdrst.com/foto/hotel-sf/a0d49/granderesp/b-b-hotel-madrid-centro-puerta-del-sol-general-974ee99.jpg",
-    planName: "Fiesta de nochevieja- B&B Hotel Madrid Centro Puerta del Sol",
-    description:
-      "Sí, ya, hoy no es nochevieja y probablemente mañana tampoco, pero ¿quién te impide celebrar una fiesta de Nochevieja cuando te venga en gana? Nosotro no!!",
+      "https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/16/2016/10/27141324/new-years-eve.jpg",
+    planName: "New year's Eve party- B&B Hotel Madrid Centro Puerta del Sol",
+    description:"Yes, today is not New Year's Eve and probably not tomorrow either, but who prevents you from having a New Year's Eve party when you feel like it? Not us !!",
     streetName: "Calle de la Montera",
     streetNumber: 10,
     zipcode: 28013,
