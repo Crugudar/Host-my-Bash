@@ -62,7 +62,6 @@ router.post("/signup", async (req, res, next) => {
       email,
       password: hashPass,
     });
-    //Redirigimos a home o a login??????????¿¿¿¿¿¿¿¿¿¿¿¿¿????????????¿¿¿¿¿¿¿¿¿¿¿ (pongo muchos para verlo)
     res.redirect("/login");
   } catch (error) {
     next(error);

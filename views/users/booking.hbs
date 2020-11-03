@@ -1,14 +1,14 @@
 <h2 class="title_pink">BOOKING DETAILS.</h2>
-<div class="booking">
-    <div>
-        <img src="{{reserva.planDetail.image}}" alt="reserva" class="img_booking">
+ <div class="booking">
+        <div>
+            <img src="{{reserva.planDetail.image}}" alt="reserva" class="img_booking">
+        </div>
+        <div class ="plan_details">
+            <h3 class="title_beige">{{reserva.planDetail.planName}}</h3>
+            <p>{{reserva.planDetail .description}} </p>
+            <p clasS="title_pink">Plan date: {{reserva.date}}</p>
+        </div>
     </div>
-    <div class="plan_details">
-        <h3 class="title_beige">{{reserva.planDetail.planName}}</h3>
-        <p>{{reserva.planDetail .description}} </p>
-        <p clasS="title_pink">Plane date: {{reserva.date}}</p>
-    </div>
-</div>
 
 {{#if isUserLoggedIn }}
 
