@@ -274,25 +274,26 @@ padding: 20px;
 .hotel_list {
   width: 300px;
   border: 1px solid #d2bb7a;
-  border-radius: 1rem;
-  
- 
+  border-radius: 50px;
+  background-color: #d2bb7a;
+color: white;
+
 }
-.div_plans {
+.title_box {
+	width: 250px;
+	text-align: center;
+}
+.div_box {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items: center;
 	align-content: stretch;
 }
+
 .seemore {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
+	color: black
 }
 .filter {
 	border-radius: 50px;
@@ -323,6 +324,9 @@ padding: 20px;
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
+}
+.img_hotels {
+	width: 200px;
 }
 
 @media screen and (min-width: 768px) {
@@ -367,6 +371,7 @@ padding: 20px;
     height: 40px;
     width: 400px;
   }
+
 
 
 
