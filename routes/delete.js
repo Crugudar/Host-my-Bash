@@ -11,29 +11,37 @@ router.get('/delete/:_id', withAuth, async(req, res, next)=>{
     
     try {
         const bookingId = req.params._id;
-        
-        const deleteBooking = await Booking.findByIdAndRemove(bookingId);
-        const thisUser= await User.findById(req.userID);
-        let arr=thisUser.reservations;
+        //console.log('DEBERÍA ESTAR LOCOOOOOOOOOOOOOOOOOOOO', bookingId,typeof(bookingId));
 
-        console.log('TODAS LAS RESERVASSSSSSSSSSSSSSSSS',arr);
+        const thisUser= await User.findById(req.userID);
+
+        //console.log('USEEEEEEEEEEEEEEEEEEEEEEER',thisUser);
+
+        let arr=thisUser.reservations;
 
         let position=arr.indexOf(bookingId);
 
-        console.log('POSICIÓN EN RESERVAAAAAAAAAAAAAASS', position);
+        if(arr.length==1){
+                let a=await User.findOneAndUpdate(req.userID, {$set:{reservations: []}},{new: true});
 
-        let modificada=arr.splice(position,1);
+                //console.log('USERARRAY1RESULTADO', a);
+                await Booking.findByIdAndRemove(bookingId);
+                res.redirect('/profile');
+            }else{
+              
+                arr.splice(position,1);  
+                //console.log('DEBERÍA ESTAR MODIFICADOOOOOOOOOOOOO',arr);
+              
+                await User.findOneAndUpdate(req.userID, {reservations: arr},{new: true});
 
-        console.log('DEBERÍA ESTAR MODIFICADOOOOOOOOOOOOO',modificada);
+                //console.log('TODAS LAS RESERVASSSSSSSSSSSSSSSSS',req.userID.reservations);
+                const deleteBooking = await Booking.findByIdAndRemove(bookingId);
+                res.redirect('/profile');
+            }
 
-        await User.findOneAndUpdate(req.userID, {$set:{reservations: modificada}},{new: true});
-
-
-        console.log('TODAS LAS RESERVASSSSSSSSSSSSSSSSS',req.userID.reservations);
-
-     res.redirect('/profile')
+    
     } catch (error) {
-        
+        console.log(error); 
     }
     
 });

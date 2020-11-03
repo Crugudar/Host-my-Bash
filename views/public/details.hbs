@@ -9,6 +9,11 @@
         <h5>Date: {{reserva.date}}</h5> 
     </div>
 
+
+   
+</div>
+
+{{#if isUserLoggedIn }}
     <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
         <label for="atendees">How many people are comming. Bear in mind that due to COVID times the maximum capacity is 6 people <b>INCLUDING YOURSELF</b>:</label>
         <select name="people" id="people">
@@ -21,5 +26,13 @@
 
     <button type="submit">Book it!</button>   
     </form>
-   
-</div>
+
+
+{{else}}
+<h2>You must be logged in to Book a plan</h2>
+<h4> If you don't have an account create one:</h4>
+<li> <a href="/signup"> Sign Up </a> </li><br>
+<h4> If you already have an account:</h4>
+<li> <a href="/login"> Log In </a> </li>
+{{/if}}
+

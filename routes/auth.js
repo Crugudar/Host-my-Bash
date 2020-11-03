@@ -104,7 +104,10 @@ router.post("/login", async (req, res) => {
 
       // enviamos en la respuesta una cookie con el token (recordar agregar el {httpOnly: true} en la respuesta) y luego redirigimos a la home
       res.cookie("token", token, { httpOnly: true });
+
       res.status(200).redirect("/");
+      
+      
     } else {
       res.render("auth/login", {
         errorMessage: "Incorrect password",

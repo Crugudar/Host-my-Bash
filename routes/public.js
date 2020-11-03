@@ -16,7 +16,9 @@ router.get("/filter", withAuth, (req, res, next) => {
 
 router.get("/list/", withAuth, async (req, res, next) => {
   const { day } = req.query;
-  
+  console.log('daaaaaaaaaaaaaaaaaaaaaaay',day);
+
+
   let today= new Date();
   let selected=new Date(day);
  
@@ -32,7 +34,20 @@ router.get("/list/", withAuth, async (req, res, next) => {
   }
 
   //Creamos una variable donde decimos que encuentre todos los planes que no tengan la misma fecha que la que han solicitado
-  const availablePlans = await Plan.find({ reserved: { $ne: req.day } });
+  const plans = await Plan.find();
+
+  //console.log(plans);
+
+  const availablePlans=[];
+
+  for(let i=0; i<plans.length; i++){
+    if(!plans[i].reserved.includes(String(day))){
+      availablePlans.push(plans[i]); 
+    }
+  }
+
+  //console.log(availablePlans);
+
   //Creamos una variable que incluya el plan y el día para luego poder renderizarlo
   var reserva = {
     availablePlans,

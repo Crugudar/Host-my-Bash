@@ -45,7 +45,7 @@ router.get("/booking/:_id/:date/", withAuth, async (req, res, next) => {
     people: num,
     inviting:inviting,
   };
-console.log("RESERVAAAAAAAA", reserva)
+console.log("RESERVAAAAAAAA", reserva);
   res.render("users/booking", { reserva });
 });
 
