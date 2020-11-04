@@ -489,16 +489,19 @@ button {
   padding: 20px;
 
 }
+
 #formGuest {
-  
+
   display: flex;
   flex-direction: column;
 }
-#formGuest>button{
-  
+
+#formGuest>button {
+
   display: flex;
   flex-direction: column;
 }
+
 #formGuestDiv {
   margin: 0.5%;
   display: flex;
@@ -613,9 +616,9 @@ button {
   .booking {
     display: flex;
     flex-direction: row;
-   
+
     justify-content: space-around;
-   
+
     font-size: 17px;
   }
 
@@ -661,23 +664,15 @@ button {
   }
 
 
-  
+
   .guest-input {
     padding: 10px;
     display: flex;
-    width:30%;
-    
-    
+    width: 30%;
+
+
   }
-  
-  .guest-input>label {
-    width: 45%;
-  }
-  
-  .guest-input>input {
-    width: 45%;
-  }
-  
+
   .guest {
     display: flex;
     flex-direction: row;
@@ -694,19 +689,97 @@ button {
   display: flex;
   flex-direction: row;
 }
-
 .confirmation_img {
-  flex: 1;
+  display: none;
 }
 
+
 .confirmation_msg {
-  flex: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
   place-content: center;
   place-items: center;
 }
+
+@media screen and (min-width: 768px) {
+
+  .confirmation_img {
+    display: block;
+    flex: 1;
+    align-content: center;
+    
+  }
+  
+  .confirmation_msg {
+   
+    font-size:17px;
+  }
+}
+.profile_info{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color:#d2bb7adc;
+  min-height: 100px;
+  color: #F7F7F7;
+  margin: 10px;
+}
+.profile_info>.container>h2{
+  color: #F7F7F7;
+}
+.profile_info>.container>p>a{
+ 
+  color: #F7F7F7;
+}
+.booking_profile{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+  text-align: center;
+  border: 1px solid #d2bb7a;
+  border-radius: 50px;
+  padding: 10px;
+  
+}
+.profile_picture{
+  width: 150px;
+  border-radius: 50%;
+  margin:auto;
+  border:7px double  #ffc1b4;
+}
+
+@media screen and (min-width: 768px){
+  .profile_page{
+    display:flex;
+    flex-direction: row;
+  }
+  .booking_profile{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .profile_info{
+    width:30%;
+    font-size: 20px;
+    
+  }
+  .container{
+    align-self: flex-start;
+    margin: 30px auto;
+  }
+  .profile_picture{
+    width: 250px;
+    border-radius: 50%;
+    border:10px double  #ffc1b4;
+    
+  }
+}
+
+
 
 footer {
   position: absolute;
