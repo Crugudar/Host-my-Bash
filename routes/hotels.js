@@ -82,12 +82,10 @@ router.get("/hotelprofile", withAuth, async (req, res, next) => {
       //console.log ("HOLAAAAAAAAA", user.isHotel)
 
       user.isHotel ? (tieneHotel = true) : (tieneHotel = false);
-      for(let i=0; i<thisUser.plans.length; i++) {
-        thisUser.plans[i].reserved.length>0 ? (tieneReservas = true) : (tieneReservas = false);
-      }
+     
       //user.plans.length > 0 ? (tieneReservas = true) : (tieneReservas = false);
 
-      console.log("USERS PLANS LENGTH", user.plans.length)
+      //console.log("USERS PLANS LENGTH", user.plans.length)
       
       res.render("users/hotel_profile", {
         tieneHotel: tieneHotel,
@@ -144,5 +142,37 @@ router.post("/createaplan", uploadCloud.single('image'), withAuth, async (req, r
   );
     res.redirect("/hotelprofile")
 });
+
+//Ruta GET editar los planes de los HOTELES
+router.get("/editplans/:_id", withAuth, async (req, res, next) => {
+  const plansId = req.params._id;
+  //console.log("PLANSID",plansId)
+  const editPlans = await Plan.findById(plansId);
+  //console.log("EDIIIIITI PLAAAAANS", editPlans)
+  res.render("users/edit_plans", {editPlans});
+})
+
+//Ruta POST editar los planes de los HOTELES
+router.post("/editplans/:_id", withAuth, async (req, res, next) => {
+  const plansId = req.params._id;
+  const {  planName,
+    description,
+     } = req.body;
+  Plan.update(
+    { _id: plansId },
+    { $set: { planName,
+      description,
+      } },
+    { new: true }
+  ).then(
+    function (data) {
+      res.redirect("/hotelprofile");
+    },
+    function (err) {
+      next(err);
+      console.log("Something went wrong!", err);
+    }
+  )
+  });
 
 module.exports = router;

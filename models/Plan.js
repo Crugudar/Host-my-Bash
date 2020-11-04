@@ -7,7 +7,7 @@ const planSchema = new Schema({
     planName:{type:String, required:true},
     description:{type:String, required:true},
     streetName:{type:String},
-    streetNumber:{type:Number},
+    streetNumber:{type:String},
     zipcode:{type:Number},
     city:{type:String},
     phone: {type:Number},

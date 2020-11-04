@@ -15,12 +15,9 @@
             <p>{{this.reserved.length}}</p>
         </div>
         <div class="booking_actions">
-            {{#if tieneReservas}}
-           
-            {{else}}
-             <a href="/editbookings/{{this._id}}" class="button">Edit</a>
-            <a href='/delete/{{this._id}}' class="button">Delete</a>
-            {{/if}}            
+             <a href="/editplans/{{this._id}}" class="button">Edit</a>
+            <a href='/deleteplans/{{this._id}}' class="button">Delete</a>
+                      
         </div>
     </div>
     {{/each}}
