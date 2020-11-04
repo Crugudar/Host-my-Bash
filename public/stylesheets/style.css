@@ -1,11 +1,20 @@
+html,
+body {
+  margin: 0px;
+
+  height: 100vh;
+}
+
 body {
   font: 14px Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
   position: relative;
   min-height: 100%;
   color: #273746;
   padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+
+
 }
 
 /* COLORES
@@ -22,13 +31,23 @@ a {
 
 input[type='text'],
 input[type='password'],
-input[type='phone']{
-	border-top: 1px solid #d2bb7a;
-    border-bottom: 1px solid #d2bb7a;
-	text-align: center;
-	border-right: none;
-	border-left: none;
-	font-style: italic;
+input[type='phone'] {
+  border-top: 1px solid #d2bb7a;
+  border-bottom: 1px solid #d2bb7a;
+  text-align: center;
+  border-right: none;
+  border-left: none;
+  font-style: italic;
+}
+
+@media screen and (min-width: 768px) {
+
+  input[type='text'],
+  input[type='password'],
+  input[type='phone'] {
+    font-size: 17px;
+  }
+
 }
 
 .navbar {
@@ -47,6 +66,7 @@ input[type='phone']{
   padding-left: 15px;
   padding-top: 5px;
 }
+
 .bars ul {
   display: flex;
   align-items: center;
@@ -55,30 +75,38 @@ input[type='phone']{
   justify-content: space-between;
   padding: 0;
   padding-left: 4px;
+
 }
+
+
 .bars ul li a {
   text-decoration: none;
   color: rgb#D2BB7A;
   transition: 1s;
   text-transform: uppercase;
 }
+
 .bars ul li a:hover {
   text-decoration: none;
   color: white;
 }
+
 div.title {
   display: flex;
   align-items: center;
   padding-right: 4px;
 }
+
 div.title a {
   text-decoration: none;
   color: white;
 }
+
 div.title h2 {
   padding: 0;
   margin: 0;
 }
+
 .bars-button {
   width: 40px;
   height: 40px;
@@ -92,15 +120,19 @@ div.title h2 {
   color: #d2bb7a;
   cursor: pointer;
 }
+
 @media screen and (max-width: 768px) {
   .navbar .contenido {
     justify-content: flex-end;
+    width: max-content;
   }
+
   .bars-button {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .bars {
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
@@ -113,31 +145,39 @@ div.title h2 {
     justify-content: center;
     transition: 0.3s;
     background-color: white;
+
   }
+
   .bars.is-active {
     left: 0;
   }
+
   .bars ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   .bars ul li {
     padding: 5px;
   }
+
   .bars ul li a {
     color: #d2bb7a;
     font-weight: 700;
   }
+
   div.title h2 {
     padding: 10.5px;
   }
 }
+
 .logo_nav {
-  width: 80px;
+  width: 100px;
 
   margin-right: 0px;
 }
+
 .index {
   display: flex;
   flex-direction: column;
@@ -145,13 +185,16 @@ div.title h2 {
   justify-content: space-between;
   align-items: center;
   align-content: stretch;
+  height: 80%;
 }
+
 .logo_index {
   width: 150px;
   display: flex;
   align-items: center;
   padding: 50px;
 }
+
 .welcome {
   background-color: #d2bb7a;
   padding: 20px;
@@ -162,7 +205,9 @@ div.title h2 {
   justify-content: center;
   align-items: stretch;
   align-content: stretch;
+  height: 90%;
 }
+
 .button {
   font-size: 1rem;
   padding: 0.5rem;
@@ -173,6 +218,7 @@ div.title h2 {
   background-color: white;
   text-decoration: none;
   margin: auto;
+
 }
 
 .divs_button {
@@ -194,16 +240,21 @@ div.title h2 {
     align-items: center;
     align-content: flex-end;
   }
+
   .welcome {
     flex: 1;
+    font-size: 20px;
+    padding: 0px 40px;
   }
+
   .same_divs_img {
     flex: 1;
     display: flex;
     place-content: center;
   }
+
   .logo_index {
-    width: 300px;
+    width: 400px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -230,7 +281,8 @@ div.title h2 {
 
 @media screen and (min-width: 768px) {
   .title_pink {
-    margin:30px;
+    margin: 30px 10px;
+    /* font-size: 20px; */
   }
 
 
@@ -245,8 +297,9 @@ div.title h2 {
 }
 
 .title_grey {
-  color: #273746;
+  color: #8F8F8F;
 }
+
 .div_aboutus_each {
   display: flex;
   flex-direction: row;
@@ -256,6 +309,7 @@ div.title h2 {
   align-content: center;
   text-align: center;
 }
+
 .tab {
   height: 30px;
   width: 300px;
@@ -271,13 +325,25 @@ div.title h2 {
 
   /* height: 200px; */
 }
+
 .account {
   font-size: 10px;
   text-align: center;
 }
+
+@media screen and (min-width: 768px) {
+  .account {
+    font-size: 16px;
+    text-align: center;
+  }
+
+}
+
+
 .login_img {
   display: none;
 }
+
 .register_img {
   display: none;
 }
@@ -292,16 +358,18 @@ div.title h2 {
   font-size: 16px;
   text-align: center;
 }
+
 .img_filter {
   background: url(../images/filter.jpg) no-repeat center center / cover;
   background-color: rgba(255, 255, 255, 0.719);
   background-blend-mode: lighten;
-  height: 600px;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 5px;
 }
+
 .calendar {
   display: flex;
   flex-direction: column;
@@ -321,7 +389,29 @@ div.title h2 {
   text-align: center;
   border: 1px solid #d2bb7a;
   border-radius: 50px;
+  padding: 10px;
+
+  /* height: 120%; */
 }
+
+
+
+.kind-reminder {
+  background-color: #d2bb7a;
+  height: 40%;
+
+}
+
+.kind-reminder h2,
+h4,
+button {
+  display: flex;
+  justify-content: center;
+
+  /* text-align: center; */
+}
+
+
 .people {
   text-align: center;
   display: flex;
@@ -330,13 +420,17 @@ div.title h2 {
   margin: 0 auto;
   padding: 30px;
 }
+
 .img_booking {
-  width: 200px;
+  width: 250px;
   padding-top: 15px;
 }
+
 .plan_details {
   padding: 20px;
+  height: 50%;
 }
+
 .button_pink {
   font-size: 1rem;
   padding: 0.5rem;
@@ -348,33 +442,38 @@ div.title h2 {
   text-decoration: none;
   margin: auto;
 }
+
 .plan_list {
-	display: flex;
-    flex-direction: row;
-	flex-wrap: wrap;
-	place-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  place-content: center;
 }
+
 .plan {
-	width: 200px;
-    margin: 10px;
-    border: 1px solid #d2bb7a;
-	padding: 5px;
-	text-decoration: none;
-	color:#273746;
-	text-align: center;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #d2bb7a;
+  padding: 5px;
+  text-decoration: none;
+  color: #273746;
+  text-align: center;
   height: 250px;
- 
+
 }
+
 .plan>img {
-	width: 100%;
-	object-fit: cover;
+  width: 100%;
+  object-fit: cover;
   height: 140px;
 }
+
 .plan>h3 {
-	height: 76px;
+  height: 76px;
 }
-.plan:hover{
-background-color: #eeddad;
+
+.plan:hover {
+  background-color: #eeddad;
 }
 
 @media screen and (min-width: 768px) {
@@ -385,32 +484,69 @@ background-color: #eeddad;
   }
 
 }
+
 .bookit {
-	padding: 20px;
-}
-.guest-input {
-	padding:10px;
-}
-.guest {
+  padding: 20px;
 
 }
-.profile_page > .booking {
-margin: 15px;
+#formGuest {
+  
+  display: flex;
+  flex-direction: column;
 }
+#formGuest>button{
+  
+  display: flex;
+  flex-direction: column;
+}
+#formGuestDiv {
+  margin: 0.5%;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.guest-input {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.guest-input>label {
+  width: 45%;
+}
+
+.guest-input>input {
+  width: 45%;
+}
+
+.guest {
+  margin: 10px;
+  background-color: #F7F7F7;
+  text-align: center;
+}
+
+.profile_page>.booking {
+  margin: 15px;
+}
+
 .booking_actions {
-	display: flex;
+  display: flex;
 }
-.booking_actions > .button {
-	margin: 15px;
+
+.booking_actions>.button {
+  margin: 15px;
 }
-.plan_details > ul {
-	margin: 0;
+
+.plan_details>ul {
+  margin: 0;
 }
 
 @media screen and (min-width: 768px) {
   .img_about {
-    width: 350px;
+    width: 450px;
   }
+
   .div_aboutus {
     display: flex;
     flex-direction: row-reverse;
@@ -418,26 +554,42 @@ margin: 15px;
     justify-content: space-around;
     align-items: center;
     align-content: center;
+    height: 75%;
+    font-size: 20px;
   }
+
   .login_img {
     width: 100%;
     display: block;
   }
+
   .login {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
-	align-content: center;
+    align-content: center;
+    height: 85%;
+
   }
+
+  .login form {
+    font-size: 20px;
+
+
+  }
+
+
   .login_flex {
-	  flex:1;
+    flex: 1;
   }
+
   .register_img {
     width: 60%;
     display: block;
   }
+
   .register {
     display: flex;
     flex-direction: row-reverse;
@@ -446,49 +598,116 @@ margin: 15px;
     align-items: center;
     align-content: center;
   }
+
+  .register form {
+    font-size: 20px;
+
+
+  }
+
   .tab {
     height: 40px;
     width: 400px;
   }
+
   .booking {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: stretch;
-    text-align: center;
+   
+    justify-content: space-around;
+   
+    font-size: 17px;
   }
+
+  .kind-reminder {
+    display: flex;
+    flex-direction: column;
+
+  }
+
   .img_booking {
-    width: 350px;
+    width: 450px;
     padding: 20px;
   }
+
   .img_filter {
     height: 500px;
   }
-  .details_page{
-	  max-width: 960px;
-	  margin: 0 auto;
+
+  .details_page {
+    max-width: 1060px;
+    margin: 0 auto;
   }
+
+  .people {
+    font-size: 17px;
+  }
+
+  .bookit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+
+  .bookit>button {
+    width: 40%;
+
+  }
+
+  .bookit>select {
+    width: 40%;
+
+  }
+
+
+  
+  .guest-input {
+    padding: 10px;
+    display: flex;
+    width:30%;
+    
+    
+  }
+  
+  .guest-input>label {
+    width: 45%;
+  }
+  
+  .guest-input>input {
+    width: 45%;
+  }
+  
+  .guest {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
 }
+
 .error-message {
-	color:rgb(143, 17, 17)
+  color: rgb(143, 17, 17)
 }
-.confirmation_page{
-display:flex;
-flex-direction: row;
+
+.confirmation_page {
+  display: flex;
+  flex-direction: row;
 }
-.confirmation_img{
-flex: 1;
+
+.confirmation_img {
+  flex: 1;
 }
-.confirmation_msg{
-flex:1;
-flex: 1;
-display: flex;
-flex-direction: column;
-place-content: center;
-place-items: center;
+
+.confirmation_msg {
+  flex: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
 }
+
 footer {
   position: absolute;
   width: 100%;
@@ -497,4 +716,5 @@ footer {
   color: #ffc1b4;
   font-size: 10px;
   text-align: center;
+
 }
