@@ -228,6 +228,14 @@ div.title h2 {
   text-decoration: underline;
 }
 
+@media screen and (min-width: 768px) {
+  .title_pink {
+    margin:30px;
+  }
+
+
+}
+
 .img_about {
   width: 200px;
 }
@@ -354,15 +362,28 @@ div.title h2 {
 	text-decoration: none;
 	color:#273746;
 	text-align: center;
-	min-height: 200px;
+  height: 250px;
+ 
 }
 .plan>img {
 	width: 100%;
 	object-fit: cover;
-    height: 150px;
+  height: 140px;
+}
+.plan>h3 {
+	height: 76px;
 }
 .plan:hover{
 background-color: #eeddad;
+}
+
+@media screen and (min-width: 768px) {
+
+  .plan {
+    width: 300px;
+    height: 375px;
+  }
+
 }
 .bookit {
 	padding: 20px;

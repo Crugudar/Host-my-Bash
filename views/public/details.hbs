@@ -12,7 +12,30 @@
         </div>
     </div>
     <br>
-    <div class="people">
+    {{!-- <div class="people">
+        <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
+            <label for="atendees">With how many people do you want to share this plan? Bear in mind that due to COVID
+                restrictions the maximum capacity is
+                6 people <b>INCLUDING YOURSELF</b>:</label>
+            <div class="bookit">
+            <select name="people" id="people" class="button_pink">
+                <option id='guestCount2' value="2">2</option>
+                <option id='guestCount3' value="3">3</option>
+                <option id='guestCount4' value="4">4</option>
+                <option id='guestCount5' value="5">5</option>
+                <option id='guestCount6' value="6">6</option>
+            </select>
+            <button type="submit" class="button">Book it!</button>
+        </div>
+        </form>
+    </div> --}}
+
+
+   
+</div>
+
+{{#if isUserLoggedIn }}
+   <div class="people">
         <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
             <label for="atendees">With how many people do you want to share this plan? Bear in mind that due to COVID
                 restrictions the maximum capacity is
@@ -29,25 +52,6 @@
         </div>
         </form>
     </div>
-
-
-   
-</div>
-
-{{#if isUserLoggedIn }}
-    <form action="/booking/{{reserva._id}}/{{reserva.date}}" method='get'>
-        <label for="atendees">How many people are comming. Bear in mind that due to COVID times the maximum capacity is 6 people <b>INCLUDING YOURSELF</b>:</label>
-        <select name="people" id="people">
-        <option id='guestCount2'value="2">2</option>
-        <option id='guestCount3'value="3">3</option>
-        <option id='guestCount4'value="4">4</option>
-        <option id='guestCount5'value="5">5</option>
-        <option id='guestCount6'value="6">6</option>
-</select>
-
-    <button type="submit">Book it!</button>   
-    </form>
-
 
 {{else}}
 <h2>You must be logged in to Book a plan</h2>

@@ -16,6 +16,7 @@ router.get("/filter", withAuth, (req, res, next) => {
 
 router.get("/list/", withAuth, async (req, res, next) => {
   const { day } = req.query;
+  //day.setHours(0,0,0,0);
   console.log('daaaaaaaaaaaaaaaaaaaaaaay',day);
 
 
@@ -41,7 +42,7 @@ router.get("/list/", withAuth, async (req, res, next) => {
   const availablePlans=[];
 
   for(let i=0; i<plans.length; i++){
-    if(!plans[i].reserved.includes(String(day))){
+    if(!plans[i].reserved.includes(day)){
       availablePlans.push(plans[i]); 
     }
   }

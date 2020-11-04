@@ -85,7 +85,7 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
     const reserva = {
       user: req.userID,
       plan: planId,
-      date: String(day),
+      date: day
       invited: attendeeArr,
     };
     //console.log(reserva);
