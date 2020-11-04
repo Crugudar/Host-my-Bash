@@ -1,21 +1,26 @@
 <div class="profile_page">
     <h2 class="title_pink">{{thisUser.username}}'s PROFILE. </h2>
 
-<a href='/add' class="button">Add a new plan</a> 
+<a href='/createaplan' class="button">Add a new plan</a> 
 
 
     {{#each thisUser.plans}}
     <div class="booking">
         <div>
-            <img src="{{this.plan.image}}" alt="reserva" class="img_booking">
+            <img src="{{this.image}}" alt="reserva" class="img_booking">
         </div>
         <div class="plan_details">
-            <h3 class="title_beige">{{this.plan.planName}}</h3>
-            <p>{{this.plan.description}} </p>
+            <h3 class="title_beige">{{this.planName}}</h3>
+            <p>{{this.description}} </p>
+            <p>{{this.reserved.length}}</p>
         </div>
         <div class="booking_actions">
-            <a href="/editbookings/{{this._id}}" class="button">Edit</a>
+            {{#if tieneReservas}}
+           
+            {{else}}
+             <a href="/editbookings/{{this._id}}" class="button">Edit</a>
             <a href='/delete/{{this._id}}' class="button">Delete</a>
+            {{/if}}            
         </div>
     </div>
     {{/each}}
