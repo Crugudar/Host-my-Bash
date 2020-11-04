@@ -82,11 +82,11 @@ router.get("/hotelprofile", withAuth, async (req, res, next) => {
       //console.log ("HOLAAAAAAAAA", user.isHotel)
 
       user.isHotel ? (tieneHotel = true) : (tieneHotel = false);
-     
+
       //user.plans.length > 0 ? (tieneReservas = true) : (tieneReservas = false);
 
       //console.log("USERS PLANS LENGTH", user.plans.length)
-      
+
       res.render("users/hotel_profile", {
         tieneHotel: tieneHotel,
         tieneReservas: tieneReservas,
@@ -106,42 +106,91 @@ router.get("/createaplan", withAuth, (req, res, next) => {
 });
 
 //Ruta crear plan POST
-router.post("/createaplan", uploadCloud.single('image'), withAuth, async (req, res, next) => {
-  const image  = req.file.url;
-  const {
-    planName,
-    description,
-    streetName,
-    streetNumber,
-    zipcode,
-    city,
-    phone,
-  } = req.body;
-  
+router.post(
+  "/createaplan",
+  uploadCloud.single("image"),
+  withAuth,
+  async (req, res, next) => {
+    const image = req.file.url;
+    const {
+      planName,
+      description,
+      streetName,
+      streetNumber,
+      zipcode,
+      city,
+      phone,
+    } = req.body;
 
-  const createPlan = {
-    image,
-    planName,
-    description,
-    streetName,
-    streetNumber,
-    zipcode,
-    city,
-    phone, }
+    const createPlan = {
+      image,
+      planName,
+      description,
+      streetName,
+      streetNumber,
+      zipcode,
+      city,
+      phone,
+    };
 
-  const newPlan = await Plan.create(createPlan);
-  
-  await User.findByIdAndUpdate(
-    req.userID, {
-      $push: {
-        plans: newPlan._id
-      }
-    }, {
-      new: true
-    }
-  );
-    res.redirect("/hotelprofile")
+    const newPlan = await Plan.create(createPlan);
+
+    await User.findByIdAndUpdate(
+      req.userID,
+      { $push: { plans: newPlan._id } },
+      { new: true }
+    );
+    res.redirect("/hotelprofile");
+  }
+);
+//Ruta GET eliminar los planes de los HOTELES
+router.get("/deleteplans/:_id", withAuth, async (req, res, next) => {
+  const plansId = req.params._id;
+  //console.log("PLANSID", plansId);
+  const deletePlans = await Plan.findById(plansId);
+  //console.log("DELETEEEEE PLAAAAANS", deletePlans)
+  const error = {
+    errorMessage:
+      "Unfortunately you cannot delete this plan due to there are some tickets sold.",
+  };
+  if (deletePlans.reserved.length > 0) {
+    res.render("users/delete_plans", { error });
+  } else {
+    const user = await User.findById(req.userID)
+    let array = user.plans
+    let position = array.indexOf(plansId)
+    array.splice(position,1)
+    await User.findOneAndUpdate(req.userID,{plans:array},{new:true}) 
+    await Plan.findByIdAndRemove(plansId);
+    res.redirect("/hotelprofile");
+  }
 });
+
+//Ruta POST delete PLANES
+// router.post("/deleteplans/:id", async (req, res, next) => {
+//   try {
+//     const plansId = req.params.id;
+//     //console.log("PLAAAAAANS ID POST", plansId);
+//     const plan = await Plan.findById(plansId);
+//     //console.log("PLAAAAAAAAN", plan.reserved.length);
+//     const notDelete = {
+//       plan,
+//       errorMessage:
+//         "Unfortunately you cannot delete this plan due to there are some tickets sold.",
+//     };
+//     if (plan.reserved.length > 0) {
+//       res.redirect("/hotelprofile", { notDelete });
+//     } else {
+//       const deletePlans = await Plan.findByIdAndRemove(plansId);
+
+//       console.log("PLAAAAAAN", plan);
+//       //Almacenamos todo en data
+//       res.redirect("/hotelprofile");
+//     }
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 //Ruta GET editar los planes de los HOTELES
 router.get("/editplans/:_id", withAuth, async (req, res, next) => {
@@ -149,20 +198,16 @@ router.get("/editplans/:_id", withAuth, async (req, res, next) => {
   //console.log("PLANSID",plansId)
   const editPlans = await Plan.findById(plansId);
   //console.log("EDIIIIITI PLAAAAANS", editPlans)
-  res.render("users/edit_plans", {editPlans});
-})
+  res.render("users/edit_plans", { editPlans });
+});
 
 //Ruta POST editar los planes de los HOTELES
 router.post("/editplans/:_id", withAuth, async (req, res, next) => {
   const plansId = req.params._id;
-  const {  planName,
-    description,
-     } = req.body;
+  const { planName, description } = req.body;
   Plan.update(
     { _id: plansId },
-    { $set: { planName,
-      description,
-      } },
+    { $set: { planName, description } },
     { new: true }
   ).then(
     function (data) {
@@ -172,7 +217,7 @@ router.post("/editplans/:_id", withAuth, async (req, res, next) => {
       next(err);
       console.log("Something went wrong!", err);
     }
-  )
-  });
+  );
+});
 
 module.exports = router;
