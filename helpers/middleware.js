@@ -23,7 +23,8 @@ const withAuth = async (req, res, next) => {
       req.userID = decoded.userID;
       // ... y con él, hacemos una búsqueda del usuario por ID y lo metemos en la variable 'currentUserInfo'de nuestro objeto res.locals...
         res.locals.currentUserInfo=await User.findById(req.userID)
-       //console.log("-----" , res.locals.currentUserInfo )
+
+       //console.log("-----" , res.locals.currentUserInfo.isHotel )
       //  ... y cambiamos el valor de 'isUserLoggedIn' a 'true' ya que ahora verificamos que el usuario está
       res.locals.isUserLoggedIn = true;
       next();
