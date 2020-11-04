@@ -13,21 +13,22 @@
     <div class="profile_booking">
         {{#each thisUser.reservations}}
         <div class="booking">
-            <div>
-                <img src="{{this.plan.image}}" alt="reserva" class="img_booking">
-            </div>
-            <div class="plan_details">
-                <h3 class="title_beige">{{this.plan.planName}}</h3>
-                <p>{{this.plan.description}} </p>
-                <p class="title_pink">Plan date: {{this.date}}</p>
-                <h4>Attendees:</h4>
-                <p>
-                    {{#each this.invited}}{{this.name}} {{this.lastname}}<br>{{/each}}
-                </p>
-            </div>
-            <div class="booking_actions">
-                <a href="/editbookings/{{this._id}}" class="button">Edit</a>
-                <a href='/delete/{{this._id}}' class="button">Delete</a>
+
+            <img src="{{this.plan.image}}" alt="reserva" class="img_booking">
+            <div class="form">
+                <div class="plan_details">
+                    <h3 class="title_beige">{{this.plan.planName}}</h3>
+                    <p>{{this.plan.description}} </p>
+                    <p class="title_pink">Plan date: {{this.date}}</p>
+                    <h4>Attendees:</h4>
+                    <p>
+                        {{#each this.invited}}{{this.name}} {{this.lastname}}<br>{{/each}}
+                    </p>
+                </div>
+                <div class="booking_actions">
+                    <a href="/editbookings/{{this._id}}" class="button">Edit</a>
+                    <a href='/delete/{{this._id}}' class="button">Delete</a>
+                </div>
             </div>
         </div>
         {{/each}}

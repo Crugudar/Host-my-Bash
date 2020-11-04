@@ -1,5 +1,6 @@
+<div class='photo_add'>
 <h4>EDIT BOOKING</h4>
-<form action="/editbookings/{{editBooking._id}}" method='POST'>
+<form class="form"action="/editbookings/{{editBooking._id}}" method='POST'>
 
     {{#each editBooking.invited}}
      <div class="guestForm ">
@@ -15,3 +16,4 @@
     {{/each}}
     <button type="submit" class='button_pink'>Confirm</button>
 </form>
+</div>
