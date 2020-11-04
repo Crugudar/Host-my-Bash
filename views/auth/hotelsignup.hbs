@@ -1,0 +1,52 @@
+{{#if errorMessage}}
+<p class="error-message">
+    {{ errorMessage }}
+</p>
+{{/if}}
+
+
+<div class="register">
+    
+    <div>
+        <img src="/images/login.jpg" alt="neon" class="register_img">
+    </div>
+    <form action="/hotelsignup" method="post">
+        <div class="form">
+            <h2 class="title_pink"> SIGN UP.</h2>
+            <div>
+                <div>
+                    {{!-- <label for="name-input"> Name </label> --}}
+                    <input type="text" name="username" id="name-input" placeholder="Hotel" class="tab">
+                </div>
+                <br>
+                <div>
+                    {{!-- <label for="email-input"> Email </label> --}}
+                    <input type="text" name="email" id="email-input" placeholder="Email" class="tab">
+                </div>
+                <br>
+                <div>
+                    {{!-- <label for="email-input"> Verify Email </label> --}}
+                    <input type="text" name="verifyemail" id="email-input" placeholder="Verify Email" class="tab">
+                </div>
+                <br>
+                <div>
+                    {{!-- <label for="password-input"> Password </label> --}}
+                    <input type="password" name="password" id="password-input" placeholder="Password" class="tab">
+                </div>
+                <br>
+                <div>
+                    {{!-- <label for="password-input"> Verify Password </label> --}}
+                    <input type="password" name="verifypassword" id="password-input" placeholder="Verify Password"
+                        class="tab">
+                </div>
+            </div>
+            <br>
+            <div>
+                <button class="button"> Register </button>
+            </div>
+            <div>
+                <p class="account">Already have an account? <a href="/login">Log in.</a></p>
+            </div>
+        </div>
+    </form>
+</div>

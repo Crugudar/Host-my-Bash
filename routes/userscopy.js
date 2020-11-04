@@ -38,7 +38,7 @@ try {
 //Ruta post donde recoge todos los detalles de la reserva para renderizarlos en el perfil del usuario
 
 router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
-  console.log('helouuuuuuuuuuuuuuuuuuuuuuuu', req.body);
+  //console.log('helouuuuuuuuuuuuuuuuuuuuuuuu', req.body);
   // let isOnlyOne=false; 
   //Necesitamos traer como un array de objetos a los invitados
   const {
@@ -80,10 +80,12 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
     const planDetail = await Plan.findById(req.params._id);
     const day = req.params.date;
 
+    console.log('dia en reservaaaaaaaaaaaaaaaaaaaaaaa',day)
+
     const reserva = {
       user: req.userID,
       plan: planId,
-      date: day,
+      date: day
       invited: attendeeArr,
     };
     //console.log(reserva);
