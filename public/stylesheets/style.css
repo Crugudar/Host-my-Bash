@@ -789,12 +789,31 @@ button {
     border:10px double  #ffc1b4;
     
   }
-  .photo_add{
+  .profile_extra{
     font-size: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:80%;
+    
+    background-color: rgba(255, 255, 255, 0.514);
+    background-blend-mode: lighten;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .photo_add{
+    background-image: url(../images/upload_photo);
   }
   .photo_add>button{
     font-size: 30px;
   }
+  .booking_edit{
+    background-image: url(../images/edit_booking);
+  }
+  
 }
 
 
