@@ -11,10 +11,6 @@ body {
   min-height: 100%;
   color: #273746;
   padding: 10px;
-  /* margin-left: 10px;
-  margin-right: 10px; */
-
-
 }
 
 /* COLORES
@@ -58,7 +54,7 @@ input[type='phone'] {
   input[type='text'],
   input[type='password'],
   input[type='phone'] {
-    font-size: 17px;
+    font-size: 15px;
   }
 
 }
@@ -256,7 +252,7 @@ div.title h2 {
 
   .welcome {
     flex: 1;
-    font-size: 20px;
+    font-size: 17px;
     padding: 0px 40px;
   }
 
@@ -737,6 +733,7 @@ button {
   min-height: 100px;
   color: #F7F7F7;
   margin: 10px;
+  border-radius: 30px;
 }
 .profile_info>.container>h2{
   color: #F7F7F7;

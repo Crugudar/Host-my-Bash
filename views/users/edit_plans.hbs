@@ -1,4 +1,5 @@
-<h4>EDIT PLAN</h4>
+<div class='profile_extra booking_edit'>
+<h4 class="title_pink">EDIT PLAN.</h4>
 <form action="/editplans/{{editPlans._id}}" method='POST'>
 
   
@@ -8,6 +9,7 @@
         <label for="user -lastname-input"> Description: </label>
         <input type="text" name="description" id="description-input" value="{{editPlans.description}}">
     </div>
-  
-    <button type="submit">Confirm</button>
+  <br>
+    <button type="submit" class='button_pink'>Confirm</button>
 </form>
+</div>
