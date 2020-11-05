@@ -153,44 +153,22 @@ router.get("/deleteplans/:_id", withAuth, async (req, res, next) => {
     errorMessage:
       "Unfortunately you cannot delete this plan due to there are some tickets sold.",
   };
-  if (deletePlans.reserved.length > 0) {
-    res.render("users/delete_plans", { error });
+  let tieneHotel = false
+  const user = res.locals.currentUserInfo
+  if (deletePlans.reserved.length > 0 && res.locals.currentUserInfo) {
+    user.isHotel ? tieneHotel = true : tieneHotel = false
+    res.render("users/delete_plans", { error, tieneHotel});
   } else {
-    const user = await User.findById(req.userID)
-    let array = user.plans
-    let position = array.indexOf(plansId)
-    array.splice(position,1)
-    await User.findOneAndUpdate(req.userID,{plans:array},{new:true}) 
+    const user = await User.findById(req.userID);
+    let array = user.plans;
+    let position = array.indexOf(plansId);
+    array.splice(position, 1);
+    await User.findOneAndUpdate(req.userID, { plans: array }, { new: true });
     await Plan.findByIdAndRemove(plansId);
     res.redirect("/hotelprofile");
   }
 });
 
-//Ruta POST delete PLANES
-// router.post("/deleteplans/:id", async (req, res, next) => {
-//   try {
-//     const plansId = req.params.id;
-//     //console.log("PLAAAAAANS ID POST", plansId);
-//     const plan = await Plan.findById(plansId);
-//     //console.log("PLAAAAAAAAN", plan.reserved.length);
-//     const notDelete = {
-//       plan,
-//       errorMessage:
-//         "Unfortunately you cannot delete this plan due to there are some tickets sold.",
-//     };
-//     if (plan.reserved.length > 0) {
-//       res.redirect("/hotelprofile", { notDelete });
-//     } else {
-//       const deletePlans = await Plan.findByIdAndRemove(plansId);
-
-//       console.log("PLAAAAAAN", plan);
-//       //Almacenamos todo en data
-//       res.redirect("/hotelprofile");
-//     }
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 
 //Ruta GET editar los planes de los HOTELES
 router.get("/editplans/:_id", withAuth, async (req, res, next) => {
