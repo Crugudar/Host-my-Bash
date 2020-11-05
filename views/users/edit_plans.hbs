@@ -1,0 +1,13 @@
+<h4>EDIT PLAN</h4>
+<form action="/editplans/{{editPlans._id}}" method='POST'>
+
+  
+     <div class="guestForm ">
+        <label for="name-input"> Plan Name: </label>
+        <input type="text" name="planName" id="planName-input" value="{{editPlans.planName}}">
+        <label for="user -lastname-input"> Description: </label>
+        <input type="text" name="description" id="description-input" value="{{editPlans.description}}">
+    </div>
+  
+    <button type="submit">Confirm</button>
+</form>

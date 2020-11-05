@@ -1,0 +1,38 @@
+<div>
+    <div>
+        {{!-- <img src="/images/wine.jpg" alt="neon" class="login_img"> --}}
+    </div>
+    <div>
+        <form action="/createaplan" method="post" enctype="multipart/form-data">
+
+            <h2 class="title_pink "> ADD A NEW PLAN.</h2>
+
+            <div>
+
+                <label>Photo</label>
+                <input type="file" name="image">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="text" name="planName" id="planName-input" placeholder="Plan Name" class="tab">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="text" name="description" id="description-input" placeholder="Description" class="tab">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="text" name="streetName" id="streetName-input" placeholder="Address" class="tab">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="number" name="streetNumber" id="streetNumber-input" placeholder="Number" class="tab">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="number" name="zipcode" id="zipcode-input" placeholder="Zipcode" class="tab">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="text" name="city" id="city-input" placeholder="City" class="tab">
+                {{!-- <label for="password-input"> Password </label> --}}
+                <input type="number" name="phone" id="phone-input" placeholder="Phone" class="tab">
+
+                <button type="submit">ADD</button>
+                {{#if errorMessage}}
+                <p class="error-message">
+                    {{ errorMessage }}
+                </p>
+                {{/if}}
+
+        </form>
+    </div>
+</div>
