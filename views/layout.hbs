@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Host my Bash!</title>
 </head>
@@ -20,8 +21,12 @@
                         {{#if isUserLoggedIn}}
                         <li> <a href="/"> HOME</a> </li>
                         <li> <a href="/aboutus"> ABOUT US </a> </li>
-                        <li> <a href="/filter"> HOST MY BASH!</a> </li> 
+                        {{#if tieneHotel}}
+                        <li> <a href="/hotelprofile"> PROFILE </a> </li>
+                        {{else}}
+                        <li> <a href="/filter"> HOST MY BASH!</a> </li>
                         <li> <a href="/profile"> PROFILE </a> </li>
+                        {{/if}}
                         <li> <a href="/logout"> LOG OUT </a> </li>
                         {{else}}
                         <li> <a href="/"> HOME </a> </li>
@@ -63,10 +68,10 @@
     </header>
     {{{body}}}
 
-        <footer>
-        
-            <p>Claudia Doñate & Carla Navia - Ironhack Full-Time Student - Barcelona 2020</p>
-        
+    <footer>
+
+        <p>Claudia Doñate & Carla Navia - Ironhack Full-Time Student - Barcelona 2020</p>
+
     </footer>
 </body>
 

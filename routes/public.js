@@ -6,8 +6,20 @@ const error = require("../public/javascripts");
 const Plan = require("../models/Plan");
 
 router.get("/aboutus", withAuth, (req, res, next) => {
-  res.render("public/aboutus");
-});
+  if(res.locals.currentUserInfo) {
+    let tieneHotel = false
+    const user = res.locals.currentUserInfo
+    //console.log ("HOLAAAAAAAAA", user.isHotel)
+    
+    user.isHotel ? tieneHotel = true : tieneHotel = false
+    
+    //console.log("FUNCIONAAAAAA?????", tieneHotel)
+    res.render("public/aboutus", {tieneHotel});
+    
+  } else {
+    res.render("public/aboutus");
+  
+}});
 
 router.get("/filter", withAuth, (req, res, next) => {
   res.render("public/filter");

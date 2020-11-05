@@ -1,4 +1,3 @@
-
 var express = require("express");
 var router = express.Router();
 
@@ -11,8 +10,8 @@ const bcrypt = require("bcryptjs");
 //requerimos paquete 'jsonwebtoken'
 const jwt = require("jsonwebtoken");
 
-// //agregar este middleware 
-const withAuth = require('../helpers/middleware');
+// //agregar este middleware
+const withAuth = require("../helpers/middleware");
 
 //Ruta GET - Signup
 router.get("/signup", function (req, res, next) {
@@ -103,10 +102,8 @@ router.post("/login", async (req, res) => {
 
       // enviamos en la respuesta una cookie con el token (recordar agregar el {httpOnly: true} en la respuesta) y luego redirigimos a la home
       res.cookie("token", token, { httpOnly: true });
-
+     
       res.status(200).redirect("/");
-      
-      
     } else {
       res.render("auth/login", {
         errorMessage: "Incorrect password",

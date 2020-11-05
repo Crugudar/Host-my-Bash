@@ -60,13 +60,37 @@ router.get("/hotelsignup", function (req, res, next) {
         password: hashPass,
         isHotel:true
       });
-      //Redirigimos a home o a login??????????¿¿¿¿¿¿¿¿¿¿¿¿¿????????????¿¿¿¿¿¿¿¿¿¿¿ (pongo muchos para verlo)
       res.redirect("/login");
     } catch (error) {
       next(error);
     }
   });
   
+  router.get("/hotelprofile", withAuth, async (req, res, next) => {
+    try {
+      const thisUser = await User.findOne({ _id: req.userID }).populate({
+      path: "plans",
+      model: "Plan",
+      // populate: { path: "plan", model: "Plan" },
+    });
+  
+    if(res.locals.currentUserInfo) {
+      let tieneHotel = false
+      const user = res.locals.currentUserInfo
+      //console.log ("HOLAAAAAAAAA", user.isHotel)
+      
+      user.isHotel ? tieneHotel = true : tieneHotel = false
+      //console.log("FUNCIONAAAAAA?????", tieneHotel)
+      res.render("users/hotel_profile", {tieneHotel:tieneHotel,thisUser:thisUser});
+      
+    } else {
+      res.render("users/hotel_profile");
+    }
+    
+  }
+catch (err){
+  console.log (err)
+}});
 
 
 module.exports = router;
