@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Plan = require("../models/Plan");
 
 const dbName = "Host-my-bash";
-mongoose.connect(`mongodb://localhost/${dbName}`);
+mongoose.connect(`mongodb+srv://Crugudar:holamundo@host-my-bash.eonqa.mongodb.net/Host-my-bash?retryWrites=true&w=majority`);
 
 const plans = [
   {
