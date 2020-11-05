@@ -102,7 +102,15 @@ router.get("/hotelprofile", withAuth, async (req, res, next) => {
 
 //Ruta crear plan GET
 router.get("/createaplan", withAuth, (req, res, next) => {
-  res.render("users/addPlan");
+  let tieneHotel = false
+    const user = res.locals.currentUserInfo
+    //console.log ("HOLAAAAAAAAA", user.isHotel)
+    
+    user.isHotel ? tieneHotel = true : tieneHotel = false
+    
+    //console.log("FUNCIONAAAAAA?????", tieneHotel)
+    res.render("users/addPlan", {tieneHotel});
+ 
 });
 
 //Ruta crear plan POST
@@ -153,11 +161,11 @@ router.get("/deleteplans/:_id", withAuth, async (req, res, next) => {
     errorMessage:
       "Unfortunately you cannot delete this plan due to there are some tickets sold.",
   };
-  let tieneHotel = false
-  const user = res.locals.currentUserInfo
+  let tieneHotel = false;
+  const user = res.locals.currentUserInfo;
   if (deletePlans.reserved.length > 0 && res.locals.currentUserInfo) {
-    user.isHotel ? tieneHotel = true : tieneHotel = false
-    res.render("users/delete_plans", { error, tieneHotel});
+    user.isHotel ? (tieneHotel = true) : (tieneHotel = false);
+    res.render("users/delete_plans", { error, tieneHotel });
   } else {
     const user = await User.findById(req.userID);
     let array = user.plans;
@@ -169,14 +177,19 @@ router.get("/deleteplans/:_id", withAuth, async (req, res, next) => {
   }
 });
 
-
 //Ruta GET editar los planes de los HOTELES
 router.get("/editplans/:_id", withAuth, async (req, res, next) => {
   const plansId = req.params._id;
   //console.log("PLANSID",plansId)
+
   const editPlans = await Plan.findById(plansId);
+  let tieneHotel = false;
+  const user = res.locals.currentUserInfo;
+  //console.log ("HOLAAAAAAAAA", user.isHotel)
+  user.isHotel ? (tieneHotel = true) : (tieneHotel = false);
+
   //console.log("EDIIIIITI PLAAAAANS", editPlans)
-  res.render("users/edit_plans", { editPlans });
+  res.render("users/edit_plans", { editPlans, tieneHotel });
 });
 
 //Ruta POST editar los planes de los HOTELES
