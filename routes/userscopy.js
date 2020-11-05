@@ -79,6 +79,8 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
     const planId = req.params._id;
     const planDetail = await Plan.findById(req.params._id);
     const day = req.params.date;
+    // day.toLocaleDateString('es-ES');
+
 
     console.log('dia en reservaaaaaaaaaaaaaaaaaaaaaaa',day)
 

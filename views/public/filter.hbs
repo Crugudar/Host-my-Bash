@@ -2,15 +2,17 @@
 
 
 <h2 class="title_pink">HOST MY BASH.</h2>
+
 <div class='filter_body'>
 <div class="img_filter">
   <div class="calendar">
     <h2 class="title_grey ">Select the date:</h2>
+    {{#if error}}<div class='error-message' id='errorFilter'><p>{{error.err}}</p></div>{{/if}}
     <form action="/list" method="get">
       <input type="date" id="start" name="day" value="" min="" max="2222-12-31" default="1993-02-14" class="filter">
       <button type="submit" class="button">Search</button>
     </form>
   </div>
 </div>
-<div class='errorMessage' id='errorFilter'></div>
+
 </div>

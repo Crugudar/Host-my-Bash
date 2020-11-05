@@ -11,7 +11,7 @@ const planSchema = new Schema({
     zipcode:{type:Number},
     city:{type:String},
     phone: {type:Number},
-    reserved:[{type:Date,default:null}]
+    reserved:[{type:String,default:null}]
     
 });
   

@@ -503,7 +503,7 @@ button {
 
 }
 
-#formGuest {
+.formGuest {
 
   display: flex;
   flex-direction: column;
@@ -515,7 +515,7 @@ button {
   flex-direction: column;
 }
 
-#formGuestDiv {
+.formGuestDiv {
   margin: 0.5%;
   display: flex;
   flex-direction: column;
@@ -631,7 +631,6 @@ button {
     flex-direction: row;
 
     justify-content: space-around;
-
     font-size: 17px;
   }
 
@@ -775,8 +774,8 @@ button {
    font-size: 20px;
   }
   .profile_info{
-    width:70%;
-    font-size: 20px;
+    width: 20%;
+    font-size: 17px;
     
   }
   .container{
@@ -784,7 +783,7 @@ button {
     margin: 30px auto;
   }
   .profile_picture{
-    width: 80%;
+    width: 60%;
     border-radius: 50%;
     border:10px double  #ffc1b4;
     
@@ -801,6 +800,8 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+  
 
   }
 
@@ -812,6 +813,15 @@ button {
   }
   .booking_edit{
     background-image: url(../images/edit_booking);
+  }
+  .retouch{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 16px;
+    background-color:rgba(255, 255, 255, 0);
+   
+    
   }
   
 }

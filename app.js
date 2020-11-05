@@ -41,6 +41,7 @@ var usersCopyRouter = require("./routes/userscopy");
 var usersEditRouter = require("./routes/users_edit");
 var usersDeleteRouter = require("./routes/delete");
 var hotelsRouter = require("./routes/hotels");
+var secretRouter = require("./routes/SECRET");
 
 
 var javaScripts = require('./public/javascripts');
@@ -65,6 +66,7 @@ app.use("/", usersCopyRouter);
 app.use("/", usersEditRouter);
 app.use("/", usersDeleteRouter);
 app.use("/", hotelsRouter);
+app.use("/", secretRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

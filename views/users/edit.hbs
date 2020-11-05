@@ -1,19 +1,34 @@
-<div class='profile_extra booking_edit'>
-<h4 class="title_pink">EDIT BOOKING</h4>
-<form class="form"action="/editbookings/{{editBooking._id}}" method='POST'>
+<div class='profile_extra booking_edit '>
 
-    {{#each editBooking.invited}}
-     <div class="guestForm ">
-        <label for="name-input"> Attendee Name </label>
-        <input type="text" name="attendeename" id="name-input" value="{{this.name}}">
-        <label for="user -lastname-input"> Attendee LastName </label>
-        <input type="text" name="attendee1lastname" id="lastname-input" value="{{this.lastname}}">
-        <label for="user-phone-input"> Attendee Phone number </label>
-        <input type="phone" name="attendee1phone" id="phone-input" value="{{this.phone}}">
+    <div>
+        <h4 class="title_beige">EDIT BOOKING</h4>
+        <form class="formGuest" action="/editbookings/{{editBooking._id}}" method='POST'>
+            <div class='formGuestDiv'>
+                {{#each editBooking.invited}}
+                <div class="guest">
+                    <div class="guestForm retouch">
+                        <div class="guest-input">
+                            <label for="name-input"> Attendee Name </label>
+                            <input type="text" name="attendeename" id="name-input" value="{{this.name}}">
 
+                        </div>
+                        <div class="guest-input">
+                            <label for="user -lastname-input"> Attendee LastName </label>
+                            <input type="text" name="attendee1lastname" id="lastname-input" value="{{this.lastname}}">
+
+                        </div>
+                        <div class="guest-input">
+                            <label for="user-phone-input"> Attendee Phone number </label>
+                            <input type="phone" name="attendee1phone" id="phone-input" value="{{this.phone}}">
+
+                        </div>
+
+                    </div>
+                </div>
+                
+                {{/each}}
+                <button type="submit" class='button_pink'>Confirm</button>
+            </div>
+        </form>
     </div>
-    <br>
-    {{/each}}
-    <button type="submit" class='button_pink'>Confirm</button>
-</form>
 </div>

@@ -30,13 +30,18 @@ router.get("/list/", withAuth, async (req, res, next) => {
   const { day } = req.query;
   //day.setHours(0,0,0,0);
   console.log('daaaaaaaaaaaaaaaaaaaaaaay',day);
-
+  if (day==""){
+    let error={
+      err:'You must select a date'
+    };
+    res.render('public/filter', {error} );
+    
+    
+  }
 
   let today= new Date();
   let selected=new Date(day);
  
-  console.log('hoyyyyyyyyyyyyyyyyyyyyyyyyyyy',today);
-  console.log(selected);
   if (selected<today){
     let error={
       err:'You cannot select dates in the past'
