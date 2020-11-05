@@ -214,7 +214,6 @@ div.title h2 {
   height: 50%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   align-content: stretch;
