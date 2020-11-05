@@ -1,14 +1,15 @@
 <div class="profile_page_hotel">
     <h2 class="title_pink">{{thisUser.username}}'s PROFILE. </h2>
     <a href='/createaplan' class="button">Add a new plan</a>
+    
     <div class="plan_list">
         {{#each thisUser.plans}}
         <div class="plan">
-            <img src="{{this.image}}" alt="reserva" class="img_booking">
-            <h3 class="title_beige">{{this.planName}}</h3>
+            <img src="{{this.image}}" alt="reserva" >
+            <h2 class="title_beige">{{this.planName}}</h2>
             <p>{{this.description}} </p>
             <p>Plans sold:{{this.reserved.length}}</p>
-            <div class="booking_actions">
+            <div class="buttons_hotel_profile" >
                 <a href="/editplans/{{this._id}}" class="button">Edit</a>
                 <a href='/deleteplans/{{this._id}}' class="button">Delete</a>
             </div>

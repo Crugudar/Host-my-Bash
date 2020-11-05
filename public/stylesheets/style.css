@@ -239,6 +239,14 @@ div.title h2 {
   align-content: center;
   height: 100px;
 }
+.tab_add {
+  border-top: 1px solid #d2bb7a;
+  border-bottom: 1px solid #d2bb7a;
+  text-align: center;
+  border-right: none;
+  border-left: none;
+  font-style: italic;
+}
 
 @media screen and (min-width: 768px) {
   .index {
@@ -485,6 +493,11 @@ button {
   background-color: #eeddad;
 }
 
+.addForm {
+  display: flex;
+    flex-direction: column;
+}
+
 @media screen and (min-width: 768px) {
 
   .plan {
@@ -552,6 +565,16 @@ button {
 
 .plan_details>ul {
   margin: 0;
+}
+.add_img {
+  height: 100%;
+  background: url(../images/addPlan.jpg) no-repeat center center / cover;
+  background-color: rgba(255, 255, 255, 0.719);
+  background-blend-mode: lighten;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
 }
 
 @media screen and (min-width: 768px) {
@@ -671,7 +694,7 @@ button {
     width: 40%;
 
   }
-
+  ;
 
 
   .guest-input {
@@ -756,7 +779,12 @@ button {
   margin:auto;
   border:7px double  #ffc1b4;
 }
-
+.delete {
+  text-align: center;
+}
+.buttons_hotel_profile{
+  margin-top: 40px;
+}
 @media screen and (min-width: 768px){
   .profile_page{
     display:flex;
