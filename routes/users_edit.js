@@ -43,7 +43,7 @@ router.post("/editbookings/:_id", withAuth, async (req, res, next) => {
     populate: { path: "plan", model: "Plan" },
   });
 
-  console.log('Holiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', thisUser.reservations);
+  //console.log('Holiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', thisUser.reservations);
   //const thisUser = await User.findByIdAndUpdate(req.userID,{reservations})
   
   console.log("EDIIIIITI BOOOOKING", )
