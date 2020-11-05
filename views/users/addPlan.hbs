@@ -3,23 +3,16 @@
     <div class="add_img">
         <form action="/createaplan" method="post" enctype="multipart/form-data">
             <div class="addForm">
-                <label>Photo</label> 
+                
+                <label>Photo</label> <br>
                 <input type="file" name="image">
-                <br>
                 <input type="text" name="planName" id="planName-input" placeholder="Plan Name" class="tab">
-                <br>
                 <input type="text" name="description" id="description-input" placeholder="Description" class="tab">
-                <br>
                 <input type="text" name="streetName" id="streetName-input" placeholder="Address" class="tab">
-                <br>
                 <input type="number" name="streetNumber" id="streetNumber-input" placeholder="Number" class="tab tab_add">
-                <br>
                 <input type="number" name="zipcode" id="zipcode-input" placeholder="Zipcode" class="tab tab_add">
-                <br>
                 <input type="text" name="city" id="city-input" placeholder="City" class="tab">
-                <br>
                 <input type="number" name="phone" id="phone-input" placeholder="Phone" class="tab tab_add">
-                <br>
                 <button type="submit" class="button">ADD</button>
                 {{#if errorMessage}}
                 <p class="error-message">

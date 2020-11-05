@@ -1,11 +1,11 @@
 <div class='profile_extra booking_edit'>
-<h4 class="title_pink">EDIT PLAN.</h4>
+<h4 class="title_grey">EDIT PLAN.</h4>
 <form action="/editplans/{{editPlans._id}}" method='POST'>
 
   
-     <div class="guestForm ">
+     <div class="editForm ">
         <label for="name-input"> Plan Name: </label>
-        <input type="text" name="planName" id="planName-input" value="{{editPlans.planName}}">
+        <input type="text" name="planName" id="planName-input" value="{{editPlans.planName}}"><br>
         <label for="user -lastname-input"> Description: </label>
         <input type="text" name="description" id="description-input" value="{{editPlans.description}}">
     </div>

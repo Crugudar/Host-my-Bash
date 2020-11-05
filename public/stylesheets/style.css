@@ -1,7 +1,8 @@
+
+
 html,
 body {
   margin: 0px;
-
   height: 100vh;
 }
 
@@ -255,7 +256,9 @@ div.title h2 {
     align-items: center;
     align-content: flex-end;
   }
-
+.tab_add {
+  font-size: 15px;
+}
   .welcome {
     flex: 1;
     font-size: 17px;
@@ -265,7 +268,8 @@ div.title h2 {
   .same_divs_img {
     flex: 1;
     display: flex;
-    place-content: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .logo_index {
@@ -328,6 +332,7 @@ div.title h2 {
 .tab {
   height: 30px;
   width: 300px;
+  margin: 8px 0;
 }
 
 .form {
@@ -462,7 +467,8 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  place-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .plan {
@@ -477,6 +483,7 @@ button {
 
 }
 
+
 .plan>img {
   width: 100%;
   object-fit: cover;
@@ -487,7 +494,32 @@ button {
   height: 76px;
 }
 
+
 .plan:hover {
+  background-color: #eeddad;
+}
+
+.hprofile {
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #d2bb7a;
+  padding: 5px;
+  text-decoration: none;
+  color: #273746;
+  text-align: center;
+  height: 300px;
+
+}
+
+
+.hprofile>img {
+  width: 100%;
+  object-fit: cover;
+  height: 140px;
+}
+
+
+.hprofile:hover {
   background-color: #eeddad;
 }
 
@@ -727,8 +759,14 @@ button {
   flex: 1;
   display: flex;
   flex-direction: column;
-  place-content: center;
+  justify-content: center;
+  align-items: center;
   place-items: center;
+}
+.editForm{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
 }
 
 @media screen and (min-width: 768px) {
@@ -780,7 +818,11 @@ button {
   text-align: center;
 }
 .buttons_hotel_profile{
-  margin-top: 40px;
+  margin-top: 20px;
+}
+.title_hotel_profile{
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 768px){
   .profile_page{
