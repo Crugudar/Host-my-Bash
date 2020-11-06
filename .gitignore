@@ -1,3 +1,7 @@
+<<<<<<< HEAD:.gitignore
 .env
 
+=======
+>>>>>>> b39ceb04efde3210cce2f3725d6585366cd32120:node_modules/buffer-equal-constant-time/.npmignore
 node_modules/
+.env
