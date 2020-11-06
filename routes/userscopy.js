@@ -14,26 +14,22 @@ const uploadCloud = require("../config/cloudinary");
 
 //Ruta subir foto de perfil get
 
-router.get('/profilephoto', withAuth, (req, res, next) => {
+router.get('/profilephoto', withAuth,(req, res, next)=>{
 
   res.render('users/photoadd');
 });
 
-router.post('/profilephoto', uploadCloud.single('photo'), withAuth, async (req, res, next) => {
+router.post('/profilephoto', uploadCloud.single('photo'), withAuth, async (req, res, next)=>{
 
-  const imgPath = req.file.url;
+const imgPath=req.file.url;
 
 
-  try {
-    await User.findByIdAndUpdate(req.userID, {
-      imgPath: imgPath
-    }, {
-      new: true
-    });
-    res.redirect('/profile');
-  } catch (error) {
-    console.log(error);
-  }
+try {
+  await User.findByIdAndUpdate(req.userID, {imgPath:imgPath}, {new: true});
+  res.redirect('/profile');
+} catch (error) {
+  console.log(error);
+}
 
 });
 
@@ -52,7 +48,7 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
   } = req.body;
   const attendeeArr = [];
   const num = req.params.people;
-
+  
   //Primer "for" para crear el hueco de los objetos de invitados en el array
   for (let i = 0; i < num; i++) {
     attendeeArr.push({
@@ -86,7 +82,7 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
     // day.toLocaleDateString('es-ES');
 
 
-    console.log('dia en reservaaaaaaaaaaaaaaaaaaaaaaa', day)
+    console.log('dia en reservaaaaaaaaaaaaaaaaaaaaaaa',day)
 
     const reserva = {
       user: req.userID,
@@ -115,7 +111,7 @@ router.post("/booking/:_id/:date/:people", withAuth, async (req, res, next) => {
         new: true
       }
     );
-    res.redirect("/profile");
+    res.render("users/confirmation");
   } catch (err) {
     console.log(err);
   }
